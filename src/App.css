@@ -1,0 +1,7 @@
+.chakra-button__icon {
+  vertical-align: middle;
+}
+.chakra-button__icon > .star-on-github {
+  width: 20px;
+  height: 20px;
+}

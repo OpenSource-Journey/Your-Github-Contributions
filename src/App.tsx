@@ -1,38 +1,56 @@
-import * as React from "react"
+import * as React from 'react';
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+  Text,
+  Button,
+  Link,
+  Grid,
+} from '@chakra-ui/react';
+import Header from './components/Header';
+import UserNameForm from './components/UserNamForm';
+import { FaGithub } from 'react-icons/fa';
+import './App.css';
+import Footer from './components/Footer';
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
+export const App = () => {
+  return (
+    <ChakraProvider theme={theme}>
+      <Header />
+      <Box as="main" p={8} my={4} px={{ base: '18', lg: '36' }}>
+        <Grid gap={8}>
           <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
+            _hover={{ textDecoration: 'none' }}
+            href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            Learn Chakra
+            <Button
+              border="1px"
+              borderColor="gray.300"
+              shadow="md"
+              rounded="24px"
+              display="block"
+              margin="auto"
+              leftIcon={<FaGithub className="star-on-github" />}
+            >
+              Star on GitHub
+            </Button>
           </Link>
-        </VStack>
-      </Grid>
-    </Box>
-  </ChakraProvider>
-)
+          <Text
+            lineHeight={1}
+            fontSize={{ base: '4xl', lg: '6xl' }}
+            fontWeight="semibold"
+            textAlign="center"
+            mb={4}
+          >
+            Generate your contributions summary in seconds
+          </Text>
+
+          <UserNameForm />
+        </Grid>
+      </Box>
+      <Footer />
+    </ChakraProvider>
+  );
+};
