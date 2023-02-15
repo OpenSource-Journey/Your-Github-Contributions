@@ -8,11 +8,11 @@ import {
   Link,
   Grid,
 } from '@chakra-ui/react';
-import Header from './components/Header';
-import UserNameForm from './components/UserNamForm';
+import Header from './components/Layout/Header';
+import UserNameForm from './components/Forms/UserNamForm';
 import { FaGithub } from 'react-icons/fa';
 import './App.css';
-import Footer from './components/Footer';
+import Footer from './components/Layout/Footer';
 
 export const App = () => {
   return (

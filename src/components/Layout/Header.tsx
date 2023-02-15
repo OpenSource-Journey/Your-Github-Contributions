@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { ColorModeSwitcher } from '../ColorModeSwitcher';
+import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
 const Header = () => {
   return (

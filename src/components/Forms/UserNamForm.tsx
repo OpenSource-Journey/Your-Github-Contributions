@@ -4,8 +4,8 @@ import {
   ContributionSummary,
   getContributionSummary,
 } from 'github-user-contribution-summary';
-import ContributionCalendar from './ContributionCalendar/ContributionCalendar';
-import GithubResourceSummaryWidget from './GithubResourceSummaryWidget';
+import ContributionCalendar from '../ContributionCalendar/ContributionCalendar';
+import GithubSummaryWidget from '../GithubSummaryWidget/GithubSummaryWidget';
 
 const UserNameForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -88,7 +88,7 @@ const UserNameForm = () => {
               }}
             >
               {Object.entries(contributionSummary).map((value) => (
-                <GithubResourceSummaryWidget
+                <GithubSummaryWidget
                   key={value[0]}
                   title={value[0]}
                   value={value[1]}
