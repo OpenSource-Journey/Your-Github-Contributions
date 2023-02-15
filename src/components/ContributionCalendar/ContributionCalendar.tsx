@@ -4,7 +4,7 @@ import { first, last, uniqueId } from 'lodash';
 import React, { FC, useMemo } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
-import './GithubContribution.css';
+import './ContributionCalendar.css';
 
 interface Props {
   userContribution: UserContribution;
@@ -14,7 +14,7 @@ type SquareValue = {
   count: number;
 };
 
-const GithubContribution: FC<Props> = ({ userContribution }) => {
+const ContributionCalendar: FC<Props> = ({ userContribution }) => {
   const { contributionDays, totalContributions } = userContribution;
 
   const dates = useMemo(() => {
@@ -84,4 +84,4 @@ const GithubContribution: FC<Props> = ({ userContribution }) => {
   );
 };
 
-export default GithubContribution;
+export default ContributionCalendar;

@@ -4,7 +4,7 @@ import {
   ContributionSummary,
   getContributionSummary,
 } from 'github-user-contribution-summary';
-import GithubContribution from './GithubContribution/GithubContribution';
+import ContributionCalendar from './ContributionCalendar/ContributionCalendar';
 import GithubResourceSummaryWidget from './GithubResourceSummaryWidget';
 
 const UserNameForm = () => {
@@ -95,7 +95,7 @@ const UserNameForm = () => {
                 />
               ))}
             </Grid>
-            <GithubContribution
+            <ContributionCalendar
               userContribution={{
                 contributionDays: contributionData.contributionByDate,
                 totalContributions: contributionData.totalContributionCount,
