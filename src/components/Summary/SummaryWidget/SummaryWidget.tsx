@@ -7,7 +7,7 @@ interface Props {
   value: number;
 }
 
-const GithubSummaryWidget: FC<Props> = ({ title, value }) => {
+const SummaryWidget: FC<Props> = ({ title, value }) => {
   return (
     <Box
       as="div"
@@ -27,4 +27,4 @@ const GithubSummaryWidget: FC<Props> = ({ title, value }) => {
   );
 };
 
-export default GithubSummaryWidget;
+export default SummaryWidget;

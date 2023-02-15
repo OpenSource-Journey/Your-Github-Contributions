@@ -70,7 +70,9 @@ const ContributionCalendar: FC<Props> = ({ userContribution }) => {
           <Tooltip
             hasArrow
             key={uniqueId()}
-            label={`${value?.count} Contributions on ${value?.date}`}
+            label={`${
+              value ? `${value?.count} Contributions on ${value?.date}` : ''
+            }`}
           >
             {rect}
           </Tooltip>

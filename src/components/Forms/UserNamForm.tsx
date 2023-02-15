@@ -1,17 +1,27 @@
-import { Button, Flex, Grid, Input, Spinner } from '@chakra-ui/react';
+import { Button, Flex, Input, Spinner } from '@chakra-ui/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ContributionSummary,
   getContributionSummary,
+  getPullRequestCountByState,
+  getIssueCountByState,
+  PullRequestCountByState,
+  PullRequestState,
+  IssueCountByState,
+  IssueState,
 } from 'github-user-contribution-summary';
 import ContributionCalendar from '../ContributionCalendar/ContributionCalendar';
-import GithubSummaryWidget from '../GithubSummaryWidget/GithubSummaryWidget';
+import ResourceDistribution from '../ResourceDistribution/ResourceDistribution';
+import Summary from '../Summary/Summary';
 
 const UserNameForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userName, setUserName] = useState<string>('Sachin-chaurasiya');
   const [contributionData, setContributionData] =
     useState<ContributionSummary>();
+  const [pullRequestCounts, setPullRequestCounts] =
+    useState<PullRequestCountByState>();
+  const [issueCounts, setIssueCounts] = useState<IssueCountByState>();
 
   const getUserContributionSummary = useCallback(async () => {
     setIsLoading(true);
@@ -31,6 +41,91 @@ const UserNameForm = () => {
     }
   }, [userName]);
 
+  const fetchPullRequestCounts = useCallback(async () => {
+    try {
+      const argument = {
+        userName,
+        githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
+      };
+      let pullRequestCountByState: PullRequestCountByState = {
+        open: 0,
+        closed: 0,
+        merged: 0,
+      };
+      const promises = Object.values(PullRequestState).map((state) =>
+        getPullRequestCountByState(argument, state)
+      );
+      const responses = await Promise.allSettled(promises);
+      const openState = responses[0];
+      const closedState = responses[1];
+      const mergedState = responses[2];
+
+      if (openState.status === 'fulfilled') {
+        pullRequestCountByState = {
+          ...pullRequestCountByState,
+          open: openState.value.count,
+        };
+      }
+      if (closedState.status === 'fulfilled') {
+        pullRequestCountByState = {
+          ...pullRequestCountByState,
+          closed: closedState.value.count,
+        };
+      }
+      if (mergedState.status === 'fulfilled') {
+        pullRequestCountByState = {
+          ...pullRequestCountByState,
+          merged: mergedState.value.count,
+        };
+      }
+
+      setPullRequestCounts(pullRequestCountByState);
+    } catch (error) {
+      setPullRequestCounts(undefined);
+    }
+  }, [userName]);
+  const fetchIssueCounts = useCallback(async () => {
+    try {
+      const argument = {
+        userName,
+        githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
+      };
+      let issueCountByState: IssueCountByState = {
+        open: 0,
+        closed: 0,
+      };
+      const promises = Object.values(IssueState).map((state) =>
+        getIssueCountByState(argument, state)
+      );
+      const responses = await Promise.allSettled(promises);
+      const openState = responses[0];
+      const closedState = responses[1];
+
+      if (openState.status === 'fulfilled') {
+        issueCountByState = {
+          ...issueCountByState,
+          open: openState.value.count,
+        };
+      }
+      if (closedState.status === 'fulfilled') {
+        issueCountByState = {
+          ...issueCountByState,
+          closed: closedState.value.count,
+        };
+      }
+
+      setIssueCounts(issueCountByState);
+    } catch (error) {
+      setIssueCounts(undefined);
+    }
+  }, [userName]);
+
+  const fetchContributionSummary = useCallback(() => {
+    getUserContributionSummary();
+    fetchPullRequestCounts();
+    fetchIssueCounts();
+  }, [getUserContributionSummary, fetchIssueCounts, fetchPullRequestCounts]);
+
   const contributionSummary = useMemo(() => {
     return {
       totalPullRequests: contributionData?.totalPullRequests ?? 0,
@@ -46,8 +141,8 @@ const UserNameForm = () => {
   }, [contributionData]);
 
   useEffect(() => {
-    getUserContributionSummary();
-  }, [getUserContributionSummary]);
+    fetchContributionSummary();
+  }, [fetchContributionSummary]);
 
   return (
     <>
@@ -76,33 +171,19 @@ const UserNameForm = () => {
       {isLoading ? (
         <Spinner display="block" margin="auto" size="xl" />
       ) : (
-        contributionData && (
-          <>
-            <Grid
-              gap={8}
-              mt={8}
-              templateColumns={{
-                base: 'repeat(1, 1fr)',
-                md: 'repeat(3, 1fr)',
-                lg: 'repeat(4, 1fr)',
-              }}
-            >
-              {Object.entries(contributionSummary).map((value) => (
-                <GithubSummaryWidget
-                  key={value[0]}
-                  title={value[0]}
-                  value={value[1]}
-                />
-              ))}
-            </Grid>
-            <ContributionCalendar
-              userContribution={{
-                contributionDays: contributionData.contributionByDate,
-                totalContributions: contributionData.totalContributionCount,
-              }}
-            />
-          </>
-        )
+        <>
+          <Summary contributionSummary={contributionSummary} />
+          <ResourceDistribution
+            issueCounts={issueCounts}
+            pullRequestCounts={pullRequestCounts}
+          />
+          <ContributionCalendar
+            userContribution={{
+              contributionDays: contributionData?.contributionByDate ?? [],
+              totalContributions: contributionData?.totalContributionCount ?? 0,
+            }}
+          />
+        </>
       )}
     </>
   );
