@@ -69,7 +69,7 @@ const UserNameForm = () => {
           variant="solid"
           onClick={getUserContributionSummary}
         >
-          Capture
+          Generate
         </Button>
       </Flex>
 
