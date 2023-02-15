@@ -15,7 +15,8 @@ const Footer = () => {
           <Box textAlign="center">
             <Text fontWeight="light">
               Made with ❤️ by{' '}
-              <Link href="https://sachinchaurasiya.dev">Sachin Chaurasiya</Link>
+              <Link href="https://sachinchaurasiya.dev">Sachin Chaurasiya</Link>{' '}
+              and Folks ✨
             </Text>
           </Box>
           <Box>
