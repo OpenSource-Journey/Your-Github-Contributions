@@ -1,7 +1,7 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../ColorModeSwitcher/ColorModeSwitcher';
+import BrandImage from '../../assets/images/octocat.png';
 
 const Header = () => {
   return (
@@ -16,7 +16,7 @@ const Header = () => {
           <Box textAlign="center">
             <Text fontWeight="bold">
               <Flex justifyContent="center">
-                Y<FaGithub />C
+                Y<Image src={BrandImage} />C
               </Flex>
             </Text>
             <Text fontWeight="light">
