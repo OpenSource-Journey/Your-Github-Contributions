@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 const Header = () => {
@@ -13,8 +14,14 @@ const Header = () => {
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Box textAlign="center">
-            <Text fontWeight="bold">YGC</Text>
-            <Text fontWeight="light">Your Github Contributions</Text>
+            <Text fontWeight="bold">
+              <Flex justifyContent="center">
+                Y<FaGithub />C
+              </Flex>
+            </Text>
+            <Text fontWeight="light">
+              <Flex gap={1}>Your Github Contributions</Flex>
+            </Text>
           </Box>
           <Box>
             <ColorModeSwitcher />
