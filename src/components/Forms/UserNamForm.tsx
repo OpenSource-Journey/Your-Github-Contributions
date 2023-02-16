@@ -42,6 +42,7 @@ const UserNameForm = () => {
   }, [userName]);
 
   const fetchPullRequestCounts = useCallback(async () => {
+    setPullRequestCounts(undefined);
     try {
       const argument = {
         userName,
@@ -84,7 +85,9 @@ const UserNameForm = () => {
       setPullRequestCounts(undefined);
     }
   }, [userName]);
+
   const fetchIssueCounts = useCallback(async () => {
+    setIssueCounts(undefined);
     try {
       const argument = {
         userName,
