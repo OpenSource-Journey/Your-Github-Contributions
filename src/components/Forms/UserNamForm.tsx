@@ -1,11 +1,11 @@
 import {
-  Box,
   Button,
   Flex,
+  IconButton,
   Input,
   Link,
   Spinner,
-  Text,
+  Tooltip,
   useClipboard,
 } from '@chakra-ui/react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -22,7 +22,8 @@ import {
 import ContributionCalendar from '../ContributionCalendar/ContributionCalendar';
 import ResourceDistribution from '../ResourceDistribution/ResourceDistribution';
 import Summary from '../Summary/Summary';
-import { startCase } from 'lodash';
+import { VscLinkExternal } from 'react-icons/vsc';
+import { HiOutlineClipboardCopy } from 'react-icons/hi';
 
 const UserNameForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -166,6 +167,12 @@ const UserNameForm = () => {
     fetchContributionSummary();
   }, [fetchContributionSummary]);
 
+  useEffect(() => {
+    if (hasCopied) {
+      alert('Contributions page link copied successfully!');
+    }
+  }, [hasCopied]);
+
   return (
     <>
       <Flex gap={4} justifyContent="center" alignItems="center">
@@ -189,39 +196,27 @@ const UserNameForm = () => {
         >
           Generate
         </Button>
+        <Tooltip label="Open Contributions Page">
+          <Link href={contributionPageURL}>
+            <IconButton
+              aria-label="contributions-page-link"
+              icon={<VscLinkExternal />}
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip label="Copy Contributions Page URL">
+          <IconButton
+            aria-label="contributions-page-link"
+            icon={<HiOutlineClipboardCopy />}
+            onClick={onCopy}
+          />
+        </Tooltip>
       </Flex>
 
       {isLoading ? (
         <Spinner display="block" margin="auto" size="xl" />
       ) : (
         <>
-          {userName && (
-            <Box
-              position="relative"
-              as="div"
-              border="1px"
-              borderColor="gray.200"
-              borderRadius="4px"
-              p={4}
-            >
-              <Text color="gray.500" fontSize={['md', 'lg']}>
-                {startCase('Contributions page url')}
-              </Text>
-              <Link href={contributionPageURL}>{contributionPageURL}</Link>
-              <Button
-                colorScheme="teal"
-                position="absolute"
-                right={3}
-                top={4}
-                zIndex={5}
-                onClick={onCopy}
-                size="sm"
-              >
-                {hasCopied ? 'Copied!' : 'Copy'}
-              </Button>
-            </Box>
-          )}
-
           <Summary contributionSummary={contributionSummary} />
           <ResourceDistribution
             issueCounts={issueCounts}
