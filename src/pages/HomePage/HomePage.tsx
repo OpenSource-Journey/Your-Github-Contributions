@@ -30,7 +30,7 @@ const HomePage = () => {
         textAlign="center"
         mb={4}
       >
-        Generate your contributions summary in seconds
+        Generate your contributions ✨ summary in seconds
       </Text>
 
       <UserNameForm />
