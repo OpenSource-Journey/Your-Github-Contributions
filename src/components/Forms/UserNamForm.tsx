@@ -195,31 +195,32 @@ const UserNameForm = () => {
         <Spinner display="block" margin="auto" size="xl" />
       ) : (
         <>
-          <Box
-            position="relative"
-            as="div"
-            border="1px"
-            borderColor="gray.200"
-            borderRadius="4px"
-            p={4}
-            shadow="md"
-          >
-            <Text color="gray.500" fontSize={['md', 'lg']}>
-              {startCase('Contributions page url')}
-            </Text>
-            <Link href={contributionPageURL}>{contributionPageURL}</Link>
-            <Button
-              colorScheme="teal"
-              position="absolute"
-              right={3}
-              top={4}
-              zIndex={5}
-              onClick={onCopy}
-              size="sm"
+          {userName && (
+            <Box
+              position="relative"
+              as="div"
+              border="1px"
+              borderColor="gray.200"
+              borderRadius="4px"
+              p={4}
             >
-              {hasCopied ? 'Copied!' : 'Copy'}
-            </Button>
-          </Box>
+              <Text color="gray.500" fontSize={['md', 'lg']}>
+                {startCase('Contributions page url')}
+              </Text>
+              <Link href={contributionPageURL}>{contributionPageURL}</Link>
+              <Button
+                colorScheme="teal"
+                position="absolute"
+                right={3}
+                top={4}
+                zIndex={5}
+                onClick={onCopy}
+                size="sm"
+              >
+                {hasCopied ? 'Copied!' : 'Copy'}
+              </Button>
+            </Box>
+          )}
 
           <Summary contributionSummary={contributionSummary} />
           <ResourceDistribution
