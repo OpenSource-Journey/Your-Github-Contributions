@@ -148,6 +148,7 @@ const UserNameForm = () => {
     <>
       <Flex gap={4} justifyContent="center" alignItems="center">
         <Input
+          spellCheck={false}
           type="search"
           autoFocus
           placeholder="Enter your GitHub Username..."
