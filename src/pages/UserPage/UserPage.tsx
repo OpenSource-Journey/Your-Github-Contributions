@@ -1,39 +1,30 @@
-import {
-  Button,
-  Flex,
-  IconButton,
-  Input,
-  Link,
-  Spinner,
-  Tooltip,
-  useClipboard,
-} from '@chakra-ui/react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Button, Spinner, Text } from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
-  getPullRequestCountByState,
   getIssueCountByState,
-  PullRequestCountByState,
-  PullRequestState,
+  getPullRequestCountByState,
   IssueCountByState,
   IssueState,
+  PullRequestCountByState,
+  PullRequestState,
 } from 'github-user-contribution-summary';
-import ContributionCalendar from '../ContributionCalendar/ContributionCalendar';
-import ResourceDistribution from '../ResourceDistribution/ResourceDistribution';
-import Summary from '../Summary/Summary';
-import { VscLinkExternal } from 'react-icons/vsc';
-import { HiOutlineClipboardCopy } from 'react-icons/hi';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
+import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
+import Summary from '../../components/Summary/Summary';
+import { BsArrowLeft } from 'react-icons/bs';
 
-const UserNameForm = () => {
+const UserPage = () => {
+  const { userName = '' } = useParams<{ userName: string }>();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [userName, setUserName] = useState<string>('Sachin-chaurasiya');
   const [contributionData, setContributionData] =
     useState<ContributionSummary>();
   const [pullRequestCounts, setPullRequestCounts] =
     useState<PullRequestCountByState>();
   const [issueCounts, setIssueCounts] = useState<IssueCountByState>();
-  const { onCopy, setValue, hasCopied } = useClipboard('');
 
   const getUserContributionSummary = useCallback(async () => {
     setIsLoading(true);
@@ -155,68 +146,28 @@ const UserNameForm = () => {
     };
   }, [contributionData]);
 
-  const contributionPageURL = useMemo(() => {
-    const url = `${window.location.protocol}//${window.location.host}/contributions/${userName}`;
-
-    setValue(url);
-
-    return url;
-  }, [userName, setValue]);
-
   useEffect(() => {
     fetchContributionSummary();
-  }, [fetchContributionSummary]);
-
-  useEffect(() => {
-    if (hasCopied) {
-      alert('Contributions page link copied successfully!');
-    }
-  }, [hasCopied]);
+  }, [fetchContributionSummary, userName]);
 
   return (
     <>
-      <Flex gap={4} justifyContent="center" alignItems="center">
-        <Input
-          spellCheck={false}
-          type="search"
-          autoFocus
-          placeholder="Enter your GitHub Username..."
-          value={userName}
-          onChange={(e) => {
-            const { value } = e.target;
-            setUserName(value);
-          }}
-        />
-        <Button
-          px={8}
-          colorScheme="teal"
-          disabled={!userName}
-          variant="solid"
-          onClick={getUserContributionSummary}
-        >
-          Generate
-        </Button>
-        <Tooltip label="Open Contributions Page">
-          <Link href={contributionPageURL}>
-            <IconButton
-              aria-label="contributions-page-link"
-              icon={<VscLinkExternal />}
-            />
-          </Link>
-        </Tooltip>
-        <Tooltip label="Copy Contributions Page URL">
-          <IconButton
-            aria-label="contributions-page-link"
-            icon={<HiOutlineClipboardCopy />}
-            onClick={onCopy}
-          />
-        </Tooltip>
-      </Flex>
-
       {isLoading ? (
         <Spinner display="block" margin="auto" size="xl" />
       ) : (
         <>
+          <Button
+            variant="ghost"
+            leftIcon={<BsArrowLeft />}
+            onClick={() => navigate('/')}
+          >
+            Go Back
+          </Button>
+          <Text
+            textAlign="center"
+            fontWeight="semibold"
+            fontSize={{ base: '2xl', lg: '4xl' }}
+          >{`${userName} contributions ✨`}</Text>
           <Summary contributionSummary={contributionSummary} />
           <ResourceDistribution
             issueCounts={issueCounts}
@@ -234,4 +185,4 @@ const UserNameForm = () => {
   );
 };
 
-export default UserNameForm;
+export default UserPage;
