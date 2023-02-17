@@ -1,4 +1,4 @@
-import { Button, Spinner, Text } from '@chakra-ui/react';
+import { Spinner, Text } from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -10,15 +10,13 @@ import {
   PullRequestState,
 } from 'github-user-contribution-summary';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
 import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
 import Summary from '../../components/Summary/Summary';
-import { BsArrowLeft } from 'react-icons/bs';
 
 const UserPage = () => {
   const { userName = '' } = useParams<{ userName: string }>();
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [contributionData, setContributionData] =
     useState<ContributionSummary>();
@@ -156,13 +154,6 @@ const UserPage = () => {
         <Spinner display="block" margin="auto" size="xl" />
       ) : (
         <>
-          <Button
-            variant="ghost"
-            leftIcon={<BsArrowLeft />}
-            onClick={() => navigate('/')}
-          >
-            Go Back
-          </Button>
           <Text
             textAlign="center"
             fontWeight="semibold"
