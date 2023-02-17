@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
 import React from 'react';
 import { ColorModeSwitcher } from '../ColorModeSwitcher/ColorModeSwitcher';
 import BrandImage from '../../assets/images/octocat.png';
@@ -13,16 +13,18 @@ const Header = () => {
         borderColor="gray.200"
       >
         <Flex alignItems="center" justifyContent="space-between">
-          <Box textAlign="center">
-            <Text fontWeight="bold">
-              <Flex justifyContent="center">
-                Y<Image src={BrandImage} />C
-              </Flex>
-            </Text>
-            <Text fontWeight="light">
-              <Flex gap={1}>Your Github Contributions</Flex>
-            </Text>
-          </Box>
+          <Link _hover={{ textDecoration: 'none' }} href="/">
+            <Box textAlign="center">
+              <Text fontWeight="bold">
+                <Flex justifyContent="center">
+                  Y<Image src={BrandImage} />C
+                </Flex>
+              </Text>
+              <Text fontWeight="light">
+                <Flex gap={1}>Your Github Contributions</Flex>
+              </Text>
+            </Box>
+          </Link>
           <Box>
             <ColorModeSwitcher />
           </Box>
