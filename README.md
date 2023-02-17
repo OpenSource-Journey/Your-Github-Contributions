@@ -33,7 +33,7 @@
 ## 👋 Introducing Your-Github-Contributions
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/59080942/219131354-9fb82898-e6e7-4008-9879-4f8091babd59.png" alt="name"/>
+  <img width="300" src="https://user-images.githubusercontent.com/59080942/219131354-9fb82898-e6e7-4008-9879-4f8091babd59.png" alt="name"/>
 </p>
 
 The **Your Github Contributions (Y:octocat:C)** application is a useful tool that helps individuals quickly and easily create a summary of their contributions.
