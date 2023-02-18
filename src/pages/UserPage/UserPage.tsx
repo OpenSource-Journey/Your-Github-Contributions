@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Spinner, Text } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -16,6 +16,7 @@ import GithubOrgs from '../../components/GithubOrgs';
 import GithubPopularRepositories from '../../components/GithubPopularRepositories';
 import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
 import Summary from '../../components/Summary/Summary';
+import UserPageSkeleton from './UserPageSkeleton';
 
 const UserPage = () => {
   const { userName = '' } = useParams<{ userName: string }>();
@@ -153,7 +154,7 @@ const UserPage = () => {
   return (
     <>
       {isLoading ? (
-        <Spinner display="block" margin="auto" size="xl" />
+        <UserPageSkeleton />
       ) : (
         <>
           <Text
