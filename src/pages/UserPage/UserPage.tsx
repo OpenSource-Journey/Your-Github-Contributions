@@ -1,4 +1,4 @@
-import { Spinner, Text } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Spinner, Text } from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -12,6 +12,8 @@ import {
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
+import GithubOrgs from '../../components/GithubOrgs';
+import GithubPopularRepositories from '../../components/GithubPopularRepositories';
 import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
 import Summary from '../../components/Summary/Summary';
 
@@ -155,6 +157,7 @@ const UserPage = () => {
       ) : (
         <>
           <Text
+            mb={12}
             textAlign="center"
             fontWeight="semibold"
             fontSize={{ base: '2xl', lg: '4xl' }}
@@ -170,6 +173,34 @@ const UserPage = () => {
               totalContributions: contributionData?.totalContributionCount ?? 0,
             }}
           />
+          <Box id="Contributed-Organizations" my={8}>
+            <Grid gap={8}>
+              <GridItem
+                border="1px"
+                borderColor="gray.200"
+                borderRadius="4px"
+                p={4}
+                shadow="md"
+              >
+                <GithubOrgs
+                  organizations={
+                    contributionData?.contributedOrganizations ?? []
+                  }
+                />
+              </GridItem>
+              <GridItem
+                border="1px"
+                borderColor="gray.200"
+                borderRadius="4px"
+                p={4}
+                shadow="md"
+              >
+                <GithubPopularRepositories
+                  repositories={contributionData?.popularRepositories ?? []}
+                />
+              </GridItem>
+            </Grid>
+          </Box>
         </>
       )}
     </>
