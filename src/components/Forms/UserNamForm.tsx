@@ -32,7 +32,7 @@ const UserNameForm = () => {
 
   return (
     <>
-      <Flex gap={4} justifyContent="center" alignItems="center">
+      <Flex wrap="wrap" gap={4} justifyContent="center" alignItems="center">
         <Input
           width={{ base: '250px', lg: '300px' }}
           spellCheck={false}
@@ -45,21 +45,21 @@ const UserNameForm = () => {
             setUserName(value);
           }}
         />
-        <Button
-          px={4}
-          colorScheme="teal"
-          disabled={!userName}
-          variant="solid"
-          onClick={() => navigate(`/contributions/${userName}`)}
-        >
-          Generate
-        </Button>
+        <Tooltip label="Generate">
+          <Button
+            px={4}
+            colorScheme="teal"
+            variant="solid"
+            onClick={() => userName && navigate(`/contributions/${userName}`)}
+          >
+            Generate
+          </Button>
+        </Tooltip>
         <Tooltip label="Copy Contributions Page URL">
           <IconButton
-            disabled={!userName}
             aria-label="contributions-page-link"
             icon={<HiOutlineClipboardCopy />}
-            onClick={onCopy}
+            onClick={() => userName && onCopy()}
           />
         </Tooltip>
       </Flex>
