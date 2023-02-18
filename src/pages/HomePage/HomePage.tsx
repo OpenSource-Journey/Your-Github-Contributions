@@ -1,7 +1,21 @@
-import { Button, Grid, Link, Text } from '@chakra-ui/react';
-import React from 'react';
+import {
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  Image,
+  Link,
+  List,
+  ListIcon,
+  ListItem,
+  Text,
+} from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import UserNameForm from '../../components/Forms/UserNamForm';
+import Mockup1Image from '../../assets/images/Mockup-1.png';
+import Mockup2Image from '../../assets/images/Mockup-2.png';
+
+import { BsCheckCircle } from 'react-icons/bs';
 
 const HomePage = () => {
   return (
@@ -32,8 +46,70 @@ const HomePage = () => {
       >
         Generate your contributions ✨ summary in seconds
       </Text>
-
       <UserNameForm />
+      <Text lineHeight={1} fontWeight="medium" textAlign="center">
+        Just enter your GitHub username and we'll generate a contributions page
+        for you.
+      </Text>
+
+      <Grid
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          md: 'repeat(3, 1fr)',
+        }}
+      >
+        <GridItem colSpan={{ base: 1, lg: 2 }} order={{ base: 1, lg: 0 }}>
+          <Image src={Mockup1Image} />
+        </GridItem>
+
+        <GridItem pt={8}>
+          <Flex height="100%" alignItems="center">
+            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+              <ListItem>
+                <ListIcon as={BsCheckCircle} color="teal" /> Contribution
+                Summary Widgets
+              </ListItem>
+              <ListItem>
+                <ListIcon as={BsCheckCircle} color="teal" /> Pull Requests
+                Distribution Graph
+              </ListItem>
+              <ListItem>
+                <ListIcon as={BsCheckCircle} color="teal" /> Issues Distribution
+                Graph
+              </ListItem>
+            </List>
+          </Flex>
+        </GridItem>
+      </Grid>
+
+      <Grid
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          md: 'repeat(3, 1fr)',
+        }}
+      >
+        <GridItem pt={8}>
+          <Flex height="100%" alignItems="center">
+            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+              <ListItem>
+                <ListIcon as={BsCheckCircle} color="teal" /> Contribution Graph
+              </ListItem>
+              <ListItem>
+                <ListIcon as={BsCheckCircle} color="teal" /> Contributed
+                Organizations
+              </ListItem>
+              <ListItem>
+                <ListIcon as={BsCheckCircle} color="teal" /> Popular
+                Repositories
+              </ListItem>
+            </List>
+          </Flex>
+        </GridItem>
+
+        <GridItem colSpan={{ base: 1, lg: 2 }}>
+          <Image src={Mockup2Image} />
+        </GridItem>
+      </Grid>
     </Grid>
   );
 };
