@@ -1,4 +1,4 @@
-import { Spinner, Text } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Spinner, Text } from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -12,6 +12,8 @@ import {
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
+import GithubOrgs from '../../components/GithubOrgs';
+import GithubPopularRepositories from '../../components/GithubPopularRepositories';
 import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
 import Summary from '../../components/Summary/Summary';
 
@@ -170,6 +172,42 @@ const UserPage = () => {
               totalContributions: contributionData?.totalContributionCount ?? 0,
             }}
           />
+          <Box id="Contributed-Organizations" my={4}>
+            <Text
+              fontSize={['2xl']}
+              fontWeight="semibold"
+              textDecoration="underline"
+              textDecorationColor="teal"
+            >
+              Contributed Organizations and Popular Repositories
+            </Text>
+            <Grid gap={8} mt={4}>
+              <GridItem
+                border="1px"
+                borderColor="gray.200"
+                borderRadius="4px"
+                p={4}
+                shadow="md"
+              >
+                <GithubOrgs
+                  organizations={
+                    contributionData?.contributedOrganizations ?? []
+                  }
+                />
+              </GridItem>
+              <GridItem
+                border="1px"
+                borderColor="gray.200"
+                borderRadius="4px"
+                p={4}
+                shadow="md"
+              >
+                <GithubPopularRepositories
+                  repositories={contributionData?.popularRepositories ?? []}
+                />
+              </GridItem>
+            </Grid>
+          </Box>
         </>
       )}
     </>
