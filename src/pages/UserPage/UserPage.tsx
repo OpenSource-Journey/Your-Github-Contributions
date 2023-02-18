@@ -172,16 +172,8 @@ const UserPage = () => {
               totalContributions: contributionData?.totalContributionCount ?? 0,
             }}
           />
-          <Box id="Contributed-Organizations" my={4}>
-            <Text
-              fontSize={['2xl']}
-              fontWeight="semibold"
-              textDecoration="underline"
-              textDecorationColor="teal"
-            >
-              Contributed Organizations and Popular Repositories
-            </Text>
-            <Grid gap={8} mt={4}>
+          <Box id="Contributed-Organizations" my={8}>
+            <Grid gap={8}>
               <GridItem
                 border="1px"
                 borderColor="gray.200"
