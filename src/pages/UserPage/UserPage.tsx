@@ -157,6 +157,7 @@ const UserPage = () => {
       ) : (
         <>
           <Text
+            mb={12}
             textAlign="center"
             fontWeight="semibold"
             fontSize={{ base: '2xl', lg: '4xl' }}
