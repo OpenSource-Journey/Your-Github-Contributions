@@ -1,4 +1,14 @@
-import { Box, Grid, GridItem, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  IconButton,
+  Link,
+  Text,
+  Tooltip,
+  useClipboard,
+} from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -10,6 +20,8 @@ import {
   PullRequestState,
 } from 'github-user-contribution-summary';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { useParams } from 'react-router-dom';
 import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
 import GithubOrgs from '../../components/GithubOrgs';
@@ -26,6 +38,7 @@ const UserPage = () => {
   const [pullRequestCounts, setPullRequestCounts] =
     useState<PullRequestCountByState>();
   const [issueCounts, setIssueCounts] = useState<IssueCountByState>();
+  const { onCopy, setValue, hasCopied } = useClipboard('');
 
   const getUserContributionSummary = useCallback(async () => {
     setIsLoading(true);
@@ -147,9 +160,23 @@ const UserPage = () => {
     };
   }, [contributionData]);
 
+  useMemo(() => {
+    const url = `${window.location.protocol}//${window.location.host}/contributions/${userName}`;
+
+    setValue(url);
+
+    return url;
+  }, [userName, setValue]);
+
   useEffect(() => {
     fetchContributionSummary();
   }, [fetchContributionSummary, userName]);
+
+  useEffect(() => {
+    if (hasCopied) {
+      alert('Contributions page link copied successfully!');
+    }
+  }, [hasCopied]);
 
   return (
     <>
@@ -157,12 +184,61 @@ const UserPage = () => {
         <UserPageSkeleton />
       ) : (
         <>
-          <Text
-            mb={12}
-            textAlign="center"
-            fontWeight="semibold"
-            fontSize={{ base: '2xl', lg: '4xl' }}
-          >{`${userName} contributions ✨`}</Text>
+          <Flex wrap="wrap" width="100%" justifyContent="space-between">
+            <Text
+              mb={7}
+              textAlign="center"
+              fontWeight="semibold"
+              fontSize={{ base: '2xl', lg: '4xl' }}
+            >{`${userName} contributions ✨`}</Text>
+            <Flex
+              width={{ base: '100%', lg: 'initial' }}
+              gap={2}
+              justifyContent="center"
+            >
+              <Link
+                href={`https://twitter.com/intent/tweet?text=${`Checkout my @github contributions summary 😍 on "Your GitHub Contributions" ✨ 👇 %0A%20%0A${window.location.href} %0A%20%0AGenerate your contributions summary by just entering your GitHub username on https://ygc.sachinchaurasiya.dev`}`}
+                target="_blank"
+              >
+                <Tooltip label="Share it on Twitter">
+                  <IconButton
+                    aria-label="Twitter"
+                    size="md"
+                    fontSize="lg"
+                    variant="ghost"
+                    color="current"
+                    icon={<FaTwitter />}
+                  />
+                </Tooltip>
+              </Link>
+              <Link
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                target="_blank"
+              >
+                <Tooltip label="Share it on LinkedIn">
+                  <IconButton
+                    aria-label="Github"
+                    size="md"
+                    fontSize="lg"
+                    variant="ghost"
+                    color="current"
+                    icon={<FaLinkedin />}
+                  />
+                </Tooltip>
+              </Link>
+              <Tooltip label="Copy Url">
+                <IconButton
+                  aria-label="Copy Url"
+                  size="md"
+                  fontSize="lg"
+                  variant="ghost"
+                  color="current"
+                  icon={<HiOutlineClipboardCopy />}
+                  onClick={() => userName && onCopy()}
+                />
+              </Tooltip>
+            </Flex>
+          </Flex>
           <Summary contributionSummary={contributionSummary} />
           <ResourceDistribution
             issueCounts={issueCounts}
