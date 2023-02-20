@@ -48,8 +48,8 @@ const HomePage = () => {
       </Text>
       <UserNameForm />
       <Text lineHeight={1} fontWeight="medium" textAlign="center">
-        Just enter your GitHub username and we'll generate a contributions page
-        for you.
+        Just enter your GitHub username and we'll generate a contributions
+        summary page for you.
       </Text>
 
       <Grid
