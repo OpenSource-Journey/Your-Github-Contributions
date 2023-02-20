@@ -25,9 +25,21 @@ const Header = () => {
               </Text>
             </Box>
           </Link>
-          <Box>
+          <Flex gap={4} alignItems="center">
+            <a
+              href="https://www.producthunt.com/posts/your-github-contributions?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-your&#0045;github&#0045;contributions"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=380429&theme=light"
+                alt="Your&#0032;GitHub&#0032;Contributions - Generate&#0032;your&#0032;contributions&#0032;✨&#0032;summary&#0032;in&#0032;seconds | Product Hunt"
+                width="250"
+                height="54"
+              />
+            </a>
             <ColorModeSwitcher />
-          </Box>
+          </Flex>
         </Flex>
       </Box>
     </nav>
