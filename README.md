@@ -38,7 +38,17 @@
 
 The **Your Github Contributions (Y:octocat:C)** application is a useful tool that helps individuals quickly and easily create a summary of their contributions.
 
-## 🏗️ How to Set up `Your-Github-Contributions` for Development?
+## Contributors
+
+We value all contributions, no matter their size! To get started, please refer to our [CONTRIBUTING](./CONTRIBUTING.md) guide, and don't hesitate to reach out to us for any assistance you may need.
+
+If you don't want to miss any updates, please show your support by giving the project a ⭐ 🚀.
+
+We extend a massive THANK YOU to all our supporters!
+
+[![Stargazers repo roster for @OpenSource-Journey/Your-Github-Contributions](https://reporoster.com/stars/OpenSource-Journey/Your-Github-Contributions)](https://github.com/OpenSource-Journey/Your-Github-Contributions/stargazers)
+
+## 🤔 How to Set up `Your-Github-Contributions` for Development?
 
 Before starting, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
