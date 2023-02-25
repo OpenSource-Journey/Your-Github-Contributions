@@ -8,7 +8,7 @@ import {
   Text,
   Tooltip,
   useClipboard,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   ContributionSummary,
   getContributionSummary,
@@ -18,41 +18,42 @@ import {
   IssueState,
   PullRequestCountByState,
   PullRequestState,
-} from 'github-user-contribution-summary';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { HiOutlineClipboardCopy } from 'react-icons/hi';
-import { useParams } from 'react-router-dom';
-import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
-import GithubOrgs from '../../components/GithubOrgs';
-import GithubPopularRepositories from '../../components/GithubPopularRepositories';
-import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
-import Summary from '../../components/Summary/Summary';
-import UserPageSkeleton from './UserPageSkeleton';
+} from "github-user-contribution-summary";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { HiOutlineClipboardCopy } from "react-icons/hi";
+import { useParams } from "react-router-dom";
+import ContributionCalendar from "../../components/ContributionCalendar/ContributionCalendar";
+import GithubOrgs from "../../components/GithubOrgs";
+import GithubPopularRepositories from "../../components/GithubPopularRepositories";
+import ResourceDistribution from "../../components/ResourceDistribution/ResourceDistribution";
+import Summary from "../../components/Summary/Summary";
+import { ToastHandler } from "../../utils/toastUtils";
+import UserPageSkeleton from "./UserPageSkeleton";
 
 const UserPage = () => {
-  const { userName = '' } = useParams<{ userName: string }>();
+  const { userName = "" } = useParams<{ userName: string }>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [contributionData, setContributionData] =
     useState<ContributionSummary>();
   const [pullRequestCounts, setPullRequestCounts] =
     useState<PullRequestCountByState>();
   const [issueCounts, setIssueCounts] = useState<IssueCountByState>();
-  const { onCopy, setValue, hasCopied } = useClipboard('');
+  const { onCopy, setValue, hasCopied } = useClipboard("");
 
   const getUserContributionSummary = useCallback(async () => {
     setIsLoading(true);
     setContributionData(undefined);
     const argument = {
       userName,
-      githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
+      githubToken: process.env.REACT_APP_GITHUB_TOKEN || "",
     };
 
     try {
       const response = await getContributionSummary(argument);
       setContributionData(response);
     } catch (error) {
-      console.log('Something went wrong', error);
+      console.log("Something went wrong", error);
     } finally {
       setIsLoading(false);
     }
@@ -63,7 +64,7 @@ const UserPage = () => {
     try {
       const argument = {
         userName,
-        githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
+        githubToken: process.env.REACT_APP_GITHUB_TOKEN || "",
       };
       let pullRequestCountByState: PullRequestCountByState = {
         open: 0,
@@ -78,19 +79,19 @@ const UserPage = () => {
       const closedState = responses[1];
       const mergedState = responses[2];
 
-      if (openState.status === 'fulfilled') {
+      if (openState.status === "fulfilled") {
         pullRequestCountByState = {
           ...pullRequestCountByState,
           open: openState.value.count,
         };
       }
-      if (closedState.status === 'fulfilled') {
+      if (closedState.status === "fulfilled") {
         pullRequestCountByState = {
           ...pullRequestCountByState,
           closed: closedState.value.count,
         };
       }
-      if (mergedState.status === 'fulfilled') {
+      if (mergedState.status === "fulfilled") {
         pullRequestCountByState = {
           ...pullRequestCountByState,
           merged: mergedState.value.count,
@@ -108,7 +109,7 @@ const UserPage = () => {
     try {
       const argument = {
         userName,
-        githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
+        githubToken: process.env.REACT_APP_GITHUB_TOKEN || "",
       };
       let issueCountByState: IssueCountByState = {
         open: 0,
@@ -121,13 +122,13 @@ const UserPage = () => {
       const openState = responses[0];
       const closedState = responses[1];
 
-      if (openState.status === 'fulfilled') {
+      if (openState.status === "fulfilled") {
         issueCountByState = {
           ...issueCountByState,
           open: openState.value.count,
         };
       }
-      if (closedState.status === 'fulfilled') {
+      if (closedState.status === "fulfilled") {
         issueCountByState = {
           ...issueCountByState,
           closed: closedState.value.count,
@@ -174,7 +175,7 @@ const UserPage = () => {
 
   useEffect(() => {
     if (hasCopied) {
-      alert('Contributions page link copied successfully!');
+      ToastHandler("success", "Contributions page link copied successfully!");
     }
   }, [hasCopied]);
 
@@ -189,10 +190,10 @@ const UserPage = () => {
               mb={7}
               textAlign="center"
               fontWeight="semibold"
-              fontSize={{ base: '2xl', lg: '4xl' }}
+              fontSize={{ base: "2xl", lg: "4xl" }}
             >{`${userName} contributions ✨`}</Text>
             <Flex
-              width={{ base: '100%', lg: 'initial' }}
+              width={{ base: "100%", lg: "initial" }}
               gap={2}
               justifyContent="center"
             >
