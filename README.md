@@ -30,13 +30,13 @@
 </div>
 
 
-## 👋 Introducing Your-Github-Contributions
+## 👋 Presenting Your-Github-Contributions
 
-<p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/59080942/219131354-9fb82898-e6e7-4008-9879-4f8091babd59.png" alt="name"/>
-</p>
+Experience a brand new way of showcasing your **GitHub contributions** with **Your GitHub Contributions!** By entering your GitHub username, you can generate a summary of all your contributions in just a few seconds.
 
-The **Your Github Contributions (Y:octocat:C)** application is a useful tool that helps individuals quickly and easily create a summary of their contributions.
+You'll be surprised at how effortless and speedy it is to create an impressive contributions summary page.
+
+Don't hesitate any longer! Give it a try by visiting https://ygc.sachinchaurasiya.dev/ and share your feedback with us. We're excited to hear your thoughts!
 
 ## Contributors
 
