@@ -38,10 +38,6 @@ You'll be surprised at how effortless and speedy it is to create an impressive c
 
 Don't hesitate any longer! Give it a try by visiting https://ygc.sachinchaurasiya.dev/ and share your feedback with us. We're excited to hear your thoughts!
 
-## Contributors
-
-We value all contributions, no matter their size! To get started, please refer to our [CONTRIBUTING](./CONTRIBUTING.md) guide, and don't hesitate to reach out to us for any assistance you may need.
-
 If you don't want to miss any updates, please show your support by giving the project a ⭐ 🚀.
 
 We extend a massive THANK YOU to all our supporters!
@@ -109,3 +105,16 @@ yarn build
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
+## Contributors
+
+We value all contributions, no matter their size! To get started, please refer to our [CONTRIBUTING](./CONTRIBUTING.md) guide, and don't hesitate to reach out to us for any assistance you may need.
+
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
