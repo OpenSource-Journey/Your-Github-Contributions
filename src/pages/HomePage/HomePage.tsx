@@ -16,6 +16,7 @@ import Mockup1Image from '../../assets/images/Mockup-1.png';
 import Mockup2Image from '../../assets/images/Mockup-2.png';
 
 import { BsCheckCircle } from 'react-icons/bs';
+import { motion } from 'framer-motion';
 
 const HomePage = () => {
   return (
@@ -26,6 +27,10 @@ const HomePage = () => {
         target="_blank"
       >
         <Button
+          as={motion.button}
+          whileHover={{
+            scale: 1.2,
+          }}
           border="1px"
           borderColor="gray.300"
           shadow="md"
@@ -58,7 +63,14 @@ const HomePage = () => {
           md: 'repeat(3, 1fr)',
         }}
       >
-        <GridItem colSpan={{ base: 1, lg: 2 }} order={{ base: 1, lg: 0 }}>
+        <GridItem
+          as={motion.div}
+          whileHover={{
+            scale: 1.1,
+          }}
+          colSpan={{ base: 1, lg: 2 }}
+          order={{ base: 1, lg: 0 }}
+        >
           <Image src={Mockup1Image} />
         </GridItem>
 
@@ -106,7 +118,13 @@ const HomePage = () => {
           </Flex>
         </GridItem>
 
-        <GridItem colSpan={{ base: 1, lg: 2 }}>
+        <GridItem
+          as={motion.div}
+          whileHover={{
+            scale: 1.1,
+          }}
+          colSpan={{ base: 1, lg: 2 }}
+        >
           <Image src={Mockup2Image} />
         </GridItem>
       </Grid>
