@@ -17,7 +17,7 @@ const UserPageSkeleton = () => {
         mt="4"
         noOfLines={1}
         spacing="2"
-        skeletonHeight="10"
+        skeletonHeight="6"
       />
       <Grid
         gap={8}

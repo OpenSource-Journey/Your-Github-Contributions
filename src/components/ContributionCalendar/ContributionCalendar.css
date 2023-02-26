@@ -28,3 +28,6 @@
   font-size: 8px;
   fill: #718096;
 }
+.react-calendar-heatmap rect {
+  rx: 2;
+}
