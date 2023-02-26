@@ -16,7 +16,11 @@ const Footer = () => {
             <Text fontWeight="light">
               Made with ❤️ by{' '}
               <Link href="https://sachinchaurasiya.dev">Sachin Chaurasiya</Link>{' '}
-              and Folks ✨
+              and{' '}
+              <Link href="https://github.com/OpenSource-Journey/Your-Github-Contributions#-contributors">
+                Folks
+              </Link>{' '}
+              ✨
             </Text>
           </Box>
           <Box>
