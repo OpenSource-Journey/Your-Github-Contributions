@@ -108,9 +108,12 @@ yarn build
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
-## Contributors
+## ✨ Contributors
 
 We value all contributions, no matter their size! To get started, please refer to our [CONTRIBUTING](./CONTRIBUTING.md) guide, and don't hesitate to reach out to us for any assistance you may need.
+
+**A big thank you to these amazing individuals**
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
