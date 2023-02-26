@@ -10,7 +10,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
-import { ToastHandler } from "../../utils/toastUtils";
+import { showToastMessage } from "../../utils/toastUtils";
 
 const UserNameForm = () => {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const UserNameForm = () => {
 
   useEffect(() => {
     if (hasCopied) {
-      ToastHandler("success", "Contributions page link copied successfully!");
+      showToastMessage("success", "Link copied successfully!");
     }
   }, [hasCopied]);
 

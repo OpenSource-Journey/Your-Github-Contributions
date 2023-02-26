@@ -1,41 +1,25 @@
-import { toast } from "react-toastify";
+import { toast, TypeOptions } from "react-toastify";
+import { TOAST_MESSAGE_STYLE } from "../constants/toastStyleConstant";
 
-export const ToastHandler = (type: string, message: string) => {
+export const showToastMessage = (type: TypeOptions, message: string) => {
   switch (type) {
     case "success": {
-      toast.success(message, {
-        position: "top-center",
-        autoClose: 3000,
-        draggable: true,
-      });
+      toast.success(message, TOAST_MESSAGE_STYLE);
 
       break;
     }
     case "error": {
-      toast.error(message, {
-        position: "top-center",
-        autoClose: 3000,
-        draggable: true,
-      });
+      toast.error(message, TOAST_MESSAGE_STYLE);
 
       break;
     }
-    case "warn": {
-      toast.warn(message, {
-        position: "top-center",
-        autoClose: 3000,
-        draggable: true,
-      });
+    case "warning": {
+      toast.warn(message, TOAST_MESSAGE_STYLE);
 
       break;
     }
     case "info": {
-      toast.info(message, {
-        position: "top-center",
-        autoClose: 3000,
-        draggable: true,
-      });
-
+      toast.info(message, TOAST_MESSAGE_STYLE);
       break;
     }
   }

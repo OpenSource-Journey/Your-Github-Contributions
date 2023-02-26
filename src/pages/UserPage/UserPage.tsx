@@ -28,7 +28,7 @@ import GithubOrgs from "../../components/GithubOrgs";
 import GithubPopularRepositories from "../../components/GithubPopularRepositories";
 import ResourceDistribution from "../../components/ResourceDistribution/ResourceDistribution";
 import Summary from "../../components/Summary/Summary";
-import { ToastHandler } from "../../utils/toastUtils";
+import { showToastMessage } from "../../utils/toastUtils";
 import UserPageSkeleton from "./UserPageSkeleton";
 
 const UserPage = () => {
@@ -175,7 +175,7 @@ const UserPage = () => {
 
   useEffect(() => {
     if (hasCopied) {
-      ToastHandler("success", "Contributions page link copied successfully!");
+      showToastMessage("success", "Link copied successfully!");
     }
   }, [hasCopied]);
 
