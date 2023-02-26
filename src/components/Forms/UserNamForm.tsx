@@ -5,16 +5,17 @@ import {
   Input,
   Tooltip,
   useClipboard,
-} from '@chakra-ui/react';
-import { useEffect, useMemo, useState } from 'react';
+} from "@chakra-ui/react";
+import { useEffect, useMemo, useState } from "react";
 
-import { useNavigate } from 'react-router-dom';
-import { HiOutlineClipboardCopy } from 'react-icons/hi';
+import { useNavigate } from "react-router-dom";
+import { HiOutlineClipboardCopy } from "react-icons/hi";
+import { showToastMessage } from "../../utils/toastUtils";
 
 const UserNameForm = () => {
   const navigate = useNavigate();
-  const { onCopy, setValue, hasCopied } = useClipboard('');
-  const [userName, setUserName] = useState<string>('');
+  const { onCopy, setValue, hasCopied } = useClipboard("");
+  const [userName, setUserName] = useState<string>("");
 
   useMemo(() => {
     const url = `${window.location.protocol}//${window.location.host}/contributions/${userName}`;
@@ -26,7 +27,7 @@ const UserNameForm = () => {
 
   useEffect(() => {
     if (hasCopied) {
-      alert('Contributions page link copied successfully!');
+      showToastMessage("success", "Link copied successfully!");
     }
   }, [hasCopied]);
 
@@ -34,7 +35,7 @@ const UserNameForm = () => {
     <>
       <Flex wrap="wrap" gap={4} justifyContent="center" alignItems="center">
         <Input
-          width={{ base: '250px', lg: '300px' }}
+          width={{ base: "250px", lg: "300px" }}
           spellCheck={false}
           type="search"
           autoFocus
