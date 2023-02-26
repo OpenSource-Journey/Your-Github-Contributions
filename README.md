@@ -1,6 +1,6 @@
 # Your Github Contributions
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
@@ -118,6 +118,7 @@ We value all contributions, no matter their size! To get started, please refer t
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://sachinchaurasiya.dev"><img src="https://avatars.githubusercontent.com/u/59080942?v=4?s=100" width="100px;" alt="Sachin Chaurasiya"/><br /><sub><b>Sachin Chaurasiya</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Sachin-chaurasiya" title="Code">💻</a> <a href="#content-Sachin-chaurasiya" title="Content">🖋</a> <a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Sachin-chaurasiya" title="Documentation">📖</a> <a href="#design-Sachin-chaurasiya" title="Design">🎨</a> <a href="#ideas-Sachin-chaurasiya" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Sachin-chaurasiya" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-Sachin-chaurasiya" title="Maintenance">🚧</a> <a href="#mentoring-Sachin-chaurasiya" title="Mentoring">🧑‍🏫</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://anujkumar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/65344146?v=4?s=100" width="100px;" alt="Anujkumar Yadav"/><br /><sub><b>Anujkumar Yadav</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=anuj-kumary" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
