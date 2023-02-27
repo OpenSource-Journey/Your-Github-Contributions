@@ -38,9 +38,6 @@
     "pre-commit": "lint-staged --concurrent false",
     "prepare": "husky install"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
