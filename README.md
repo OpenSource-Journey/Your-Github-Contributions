@@ -73,6 +73,30 @@ Or
 yarn install
 ```
 
+### Create `.env` file and add your GitHub access token
+
+```shell
+# from the project root directory create a `.env` file
+
+touch .env
+
+```
+
+
+```env
+REACT_APP_GITHUB_TOKEN=<your_github_access_token>
+
+Replace <your_github_access_token> with your personal access token.
+
+Example:
+
+REACT_APP_GITHUB_TOKEN=BShC9PyEF1HdLh5lllgtspY8ylBqEpOxkvi
+
+```
+
+
+> To get your personal access token you can refer this guide [creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
 ### 🦄 Start the Development Mode
 
 Use the following command to start the app in the development mode:
