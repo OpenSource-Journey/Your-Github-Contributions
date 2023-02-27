@@ -1,6 +1,9 @@
 # Your Github Contributions
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
@@ -31,7 +34,6 @@
 </a>
 </p>
 </div>
-
 
 ## 👋 Presenting Your-Github-Contributions
 
@@ -73,7 +75,7 @@ Or
 yarn install
 ```
 
-### Create `.env` file and add your GitHub access token
+### ⚙️ Create `.env` file and add your GitHub access token
 
 ```shell
 # from the project root directory create a `.env` file
@@ -81,7 +83,6 @@ yarn install
 touch .env
 
 ```
-
 
 ```env
 REACT_APP_GITHUB_TOKEN=<your_github_access_token>
@@ -93,7 +94,6 @@ Example:
 REACT_APP_GITHUB_TOKEN=BShC9PyEF1HdLh5lllgtspY8ylBqEpOxkvi
 
 ```
-
 
 > To get your personal access token you can refer this guide [creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
@@ -114,7 +114,6 @@ yarn start
 It runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes. You may also see any lint errors in the console.
-
 
 ### 🧱 Build the App for Production
 
