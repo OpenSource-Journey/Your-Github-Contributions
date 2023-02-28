@@ -24,7 +24,7 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
         }}
       >
         {repositories.map((repository) => {
-          if(!Object.keys(repository).length) return <></>
+          if(Object.entries(repository).length === 0) return <></>
           return <Link
             _hover={{
               textDecoration: 'none',
