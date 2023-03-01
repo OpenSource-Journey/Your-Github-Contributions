@@ -23,8 +23,9 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
           md: 'repeat(2, 1fr)',
         }}
       >
-        {repositories.map((repository) => (
-          <Link
+        {repositories.map((repository) => {
+          if(Object.entries(repository).length === 0) return <></>
+          return <Link
             _hover={{
               textDecoration: 'none',
               background:
@@ -53,7 +54,8 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
               {repository.description}
             </Text>
           </Link>
-        ))}
+        }
+        )}
       </Grid>
     </>
   );
