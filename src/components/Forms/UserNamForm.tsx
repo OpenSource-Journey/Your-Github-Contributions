@@ -31,8 +31,12 @@ const UserNameForm = () => {
     }
   }, [hasCopied]);
 
+  const handleSubmit = ()=>{
+    userName && navigate(`/contributions/${userName}`)
+  }
+
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <Flex wrap="wrap" gap={4} justifyContent="center" alignItems="center">
         <Input
           width={{ base: "250px", lg: "300px" }}
@@ -51,7 +55,7 @@ const UserNameForm = () => {
             px={4}
             colorScheme="teal"
             variant="solid"
-            onClick={() => userName && navigate(`/contributions/${userName}`)}
+            type="submit"
           >
             Generate
           </Button>
@@ -64,7 +68,7 @@ const UserNameForm = () => {
           />
         </Tooltip>
       </Flex>
-    </>
+      </form>
   );
 };
 
