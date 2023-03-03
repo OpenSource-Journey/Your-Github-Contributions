@@ -9,20 +9,20 @@ import {
   ListIcon,
   ListItem,
   Text,
-} from '@chakra-ui/react';
-import { FaGithub } from 'react-icons/fa';
-import UserNameForm from '../../components/Forms/UserNamForm';
-import Mockup1Image from '../../assets/images/Mockup-1.png';
-import Mockup2Image from '../../assets/images/Mockup-2.png';
+} from "@chakra-ui/react";
+import { FaGithub } from "react-icons/fa";
+import UserNameForm from "../../components/Forms/UserNamForm";
+import Mockup1Image from "../../assets/images/Mockup-1.png";
+import Mockup2Image from "../../assets/images/Mockup-2.png";
 
-import { BsCheckCircle } from 'react-icons/bs';
-import { motion } from 'framer-motion';
+import { BsCheckCircle } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
     <Grid gap={8}>
       <Link
-        _hover={{ textDecoration: 'none' }}
+        _hover={{ textDecoration: "none" }}
         href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
         target="_blank"
       >
@@ -44,7 +44,7 @@ const HomePage = () => {
       </Link>
       <Text
         lineHeight={1}
-        fontSize={{ base: '4xl', lg: '6xl' }}
+        fontSize={{ base: "4xl", lg: "6xl" }}
         fontWeight="semibold"
         textAlign="center"
         mb={4}
@@ -59,8 +59,8 @@ const HomePage = () => {
 
       <Grid
         templateColumns={{
-          base: 'repeat(1, 1fr)',
-          md: 'repeat(3, 1fr)',
+          base: "repeat(1, 1fr)",
+          md: "repeat(3, 1fr)",
         }}
       >
         <GridItem
@@ -76,7 +76,12 @@ const HomePage = () => {
 
         <GridItem pt={8}>
           <Flex height="100%" alignItems="center">
-            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+            <List
+              fontSize="2xl"
+              lineHeight={1.5}
+              ml={{ base: 4 }}
+              width="max-content"
+            >
               <ListItem>
                 <ListIcon as={BsCheckCircle} color="teal" /> Contribution
                 Summary Widgets
@@ -96,13 +101,18 @@ const HomePage = () => {
 
       <Grid
         templateColumns={{
-          base: 'repeat(1, 1fr)',
-          md: 'repeat(3, 1fr)',
+          base: "repeat(1, 1fr)",
+          md: "repeat(3, 1fr)",
         }}
       >
         <GridItem pt={8}>
           <Flex height="100%" alignItems="center">
-            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+            <List
+              fontSize="2xl"
+              lineHeight={1.5}
+              ml={{ base: 4 }}
+              width="max-content"
+            >
               <ListItem>
                 <ListIcon as={BsCheckCircle} color="teal" /> Contribution Graph
               </ListItem>
