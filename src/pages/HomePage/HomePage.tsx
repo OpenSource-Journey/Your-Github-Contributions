@@ -24,7 +24,8 @@ const HomePage = () => {
       <Link
         _hover={{ textDecoration: 'none' }}
         href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
-        target="_blank">
+        target="_blank"
+      >
         <Button
           as={motion.button}
           border="1px"
@@ -36,7 +37,8 @@ const HomePage = () => {
           shadow="md"
           whileHover={{
             scale: 1.2,
-          }}>
+          }}
+        >
           Star on GitHub
         </Button>
       </Link>
@@ -45,7 +47,8 @@ const HomePage = () => {
         fontWeight="semibold"
         lineHeight={1}
         mb={4}
-        textAlign="center">
+        textAlign="center"
+      >
         Generate your contributions ✨ summary in seconds
       </Text>
       <UserNameForm />
@@ -58,20 +61,27 @@ const HomePage = () => {
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(3, 1fr)',
-        }}>
+        }}
+      >
         <GridItem
           as={motion.div}
           colSpan={{ base: 1, lg: 2 }}
           order={{ base: 1, lg: 0 }}
           whileHover={{
             scale: 1.1,
-          }}>
+          }}
+        >
           <Image src={Mockup1Image} />
         </GridItem>
 
         <GridItem pt={8}>
           <Flex alignItems="center" height="100%">
-            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+            <List
+              fontSize="2xl"
+              lineHeight={1.5}
+              ml={{ base: 4 }}
+              width="max-content"
+            >
               <ListItem>
                 <ListIcon as={BsCheckCircle} color="teal" /> Contribution
                 Summary Widgets
@@ -93,10 +103,16 @@ const HomePage = () => {
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(3, 1fr)',
-        }}>
+        }}
+      >
         <GridItem pt={8}>
           <Flex alignItems="center" height="100%">
-            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+            <List
+              fontSize="2xl"
+              lineHeight={1.5}
+              ml={{ base: 4 }}
+              width="max-content"
+            >
               <ListItem>
                 <ListIcon as={BsCheckCircle} color="teal" /> Contribution Graph
               </ListItem>
@@ -117,7 +133,8 @@ const HomePage = () => {
           colSpan={{ base: 1, lg: 2 }}
           whileHover={{
             scale: 1.1,
-          }}>
+          }}
+        >
           <Image src={Mockup2Image} />
         </GridItem>
       </Grid>

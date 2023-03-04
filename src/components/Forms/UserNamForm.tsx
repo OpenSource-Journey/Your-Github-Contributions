@@ -8,8 +8,8 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
 import { showToastMessage } from '../../utils/toastUtils';
 
 const UserNameForm = () => {
@@ -31,8 +31,12 @@ const UserNameForm = () => {
     }
   }, [hasCopied]);
 
+  const handleSubmit = () => {
+    userName && navigate(`/contributions/${userName}`);
+  };
+
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <Flex alignItems="center" gap={4} justifyContent="center" wrap="wrap">
         <Input
           autoFocus
@@ -47,11 +51,7 @@ const UserNameForm = () => {
           }}
         />
         <Tooltip label="Generate">
-          <Button
-            colorScheme="teal"
-            px={4}
-            variant="solid"
-            onClick={() => userName && navigate(`/contributions/${userName}`)}>
+          <Button colorScheme="teal" px={4} type="submit" variant="solid">
             Generate
           </Button>
         </Tooltip>
@@ -63,7 +63,7 @@ const UserNameForm = () => {
           />
         </Tooltip>
       </Flex>
-    </>
+    </form>
   );
 };
 

@@ -2,7 +2,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -51,6 +51,15 @@ We extend a massive THANK YOU to all our supporters!
 
 ## 🤔 How to Set up `Your-Github-Contributions` for Development?
 
+<p align="center">
+  <a href="https://gitpod.io/#https://github.com/OpenSource-Journey/Your-Github-Contributions">
+  <img
+    src="https://gitpod.io/button/open-in-gitpod.svg"
+    alt="Open in Gitpod"
+  />
+</a>
+</p>
+
 Before starting, please check the [Contribution Guide](./CONTRIBUTING.md) to get started.
 
 ### 🍴 Fork and Clone the Repo
@@ -74,6 +83,28 @@ Or
 ```bash
 yarn install
 ```
+
+### ⚙️ Create `.env` file and add your GitHub access token
+
+```shell
+# from the project root directory create a `.env` file
+
+touch .env
+
+```
+
+```env
+REACT_APP_GITHUB_TOKEN=<your_github_access_token>
+
+Replace <your_github_access_token> with your personal access token.
+
+Example:
+
+REACT_APP_GITHUB_TOKEN=BShC9PyEF1HdLh5lllgtspY8ylBqEpOxkvi
+
+```
+
+> To get your personal access token you can refer this guide [creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ### 🦄 Start the Development Mode
 
@@ -123,6 +154,7 @@ We value all contributions, no matter their size! To get started, please refer t
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://sachinchaurasiya.dev"><img src="https://avatars.githubusercontent.com/u/59080942?v=4?s=100" width="100px;" alt="Sachin Chaurasiya"/><br /><sub><b>Sachin Chaurasiya</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Sachin-chaurasiya" title="Code">💻</a> <a href="#content-Sachin-chaurasiya" title="Content">🖋</a> <a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Sachin-chaurasiya" title="Documentation">📖</a> <a href="#design-Sachin-chaurasiya" title="Design">🎨</a> <a href="#ideas-Sachin-chaurasiya" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Sachin-chaurasiya" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-Sachin-chaurasiya" title="Maintenance">🚧</a> <a href="#mentoring-Sachin-chaurasiya" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://anujkumar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/65344146?v=4?s=100" width="100px;" alt="Anujkumar Yadav"/><br /><sub><b>Anujkumar Yadav</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=anuj-kumary" title="Code">💻</a> <a href="#ideas-anuj-kumary" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hat52"><img src="https://avatars.githubusercontent.com/u/44437268?v=4?s=100" width="100px;" alt="Hamza Ali"/><br /><sub><b>Hamza Ali</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Hat52" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
