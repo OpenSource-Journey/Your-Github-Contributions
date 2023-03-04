@@ -34,7 +34,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"./**/*.{js,jsx,ts,tsx,json}\"",
     "lint:fix": "eslint './**/*.{js,jsx,ts,tsx,json}' --fix",
-    "pretty": "prettier . --config './.prettierrc.yaml' --write"
+    "pretty": "prettier . --config './.prettierrc.yaml' --ignore-path './.prettierignore'  --write",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged --concurrent false"
   },
   "browserslist": {
     "production": [
@@ -57,6 +59,8 @@
     "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.2",
     "prettier": "^2.8.4"
   }
 }
