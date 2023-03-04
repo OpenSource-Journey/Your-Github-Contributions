@@ -11,12 +11,12 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
-import UserNameForm from '../../components/Forms/UserNamForm';
 import Mockup1Image from '../../assets/images/Mockup-1.png';
 import Mockup2Image from '../../assets/images/Mockup-2.png';
+import UserNameForm from '../../components/Forms/UserNamForm';
 
-import { BsCheckCircle } from 'react-icons/bs';
 import { motion } from 'framer-motion';
+import { BsCheckCircle } from 'react-icons/bs';
 
 const HomePage = () => {
   return (
@@ -24,36 +24,33 @@ const HomePage = () => {
       <Link
         _hover={{ textDecoration: 'none' }}
         href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
-        target="_blank"
-      >
+        target="_blank">
         <Button
           as={motion.button}
-          whileHover={{
-            scale: 1.2,
-          }}
           border="1px"
           borderColor="gray.300"
-          shadow="md"
-          rounded="24px"
           display="block"
-          margin="auto"
           leftIcon={<FaGithub className="star-on-github" />}
-        >
+          margin="auto"
+          rounded="24px"
+          shadow="md"
+          whileHover={{
+            scale: 1.2,
+          }}>
           Star on GitHub
         </Button>
       </Link>
       <Text
-        lineHeight={1}
         fontSize={{ base: '4xl', lg: '6xl' }}
         fontWeight="semibold"
-        textAlign="center"
+        lineHeight={1}
         mb={4}
-      >
+        textAlign="center">
         Generate your contributions ✨ summary in seconds
       </Text>
       <UserNameForm />
-      <Text lineHeight={1} fontWeight="medium" textAlign="center">
-        Just enter your GitHub username and we'll generate a contributions
+      <Text fontWeight="medium" lineHeight={1} textAlign="center">
+        Just enter your GitHub username and we&apos;ll generate a contributions
         summary page for you.
       </Text>
 
@@ -61,21 +58,19 @@ const HomePage = () => {
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(3, 1fr)',
-        }}
-      >
+        }}>
         <GridItem
           as={motion.div}
-          whileHover={{
-            scale: 1.1,
-          }}
           colSpan={{ base: 1, lg: 2 }}
           order={{ base: 1, lg: 0 }}
-        >
+          whileHover={{
+            scale: 1.1,
+          }}>
           <Image src={Mockup1Image} />
         </GridItem>
 
         <GridItem pt={8}>
-          <Flex height="100%" alignItems="center">
+          <Flex alignItems="center" height="100%">
             <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
               <ListItem>
                 <ListIcon as={BsCheckCircle} color="teal" /> Contribution
@@ -98,10 +93,9 @@ const HomePage = () => {
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(3, 1fr)',
-        }}
-      >
+        }}>
         <GridItem pt={8}>
-          <Flex height="100%" alignItems="center">
+          <Flex alignItems="center" height="100%">
             <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
               <ListItem>
                 <ListIcon as={BsCheckCircle} color="teal" /> Contribution Graph
@@ -120,11 +114,10 @@ const HomePage = () => {
 
         <GridItem
           as={motion.div}
+          colSpan={{ base: 1, lg: 2 }}
           whileHover={{
             scale: 1.1,
-          }}
-          colSpan={{ base: 1, lg: 2 }}
-        >
+          }}>
           <Image src={Mockup2Image} />
         </GridItem>
       </Grid>

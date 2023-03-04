@@ -12,6 +12,9 @@ extends:
   - plugin:prettier/recommended
   - prettier
 overrides: []
+settings:
+  react:
+    version: detect
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaVersion: latest

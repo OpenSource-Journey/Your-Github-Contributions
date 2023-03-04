@@ -1,14 +1,15 @@
-import { useColorMode } from "@chakra-ui/react";
-import React from "react";
-import { ToastContainer } from "react-toastify";
+import { useColorMode } from '@chakra-ui/react';
+import React from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const ToastMessage = () => {
   const colorModeConfig = useColorMode();
+
   return (
     <ToastContainer
       closeOnClick
-      theme={colorModeConfig.colorMode === "dark" ? "dark" : "light"}
       pauseOnFocusLoss
+      theme={colorModeConfig.colorMode === 'dark' ? 'dark' : 'light'}
     />
   );
 };

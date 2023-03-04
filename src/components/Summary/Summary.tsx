@@ -24,8 +24,7 @@ const Summary: FC<Props> = ({ contributionSummary }) => {
         base: 'repeat(1, 1fr)',
         md: 'repeat(3, 1fr)',
         lg: 'repeat(4, 1fr)',
-      }}
-    >
+      }}>
       {Object.entries(contributionSummary).map((value) => (
         <SummaryWidget key={value[0]} title={value[0]} value={value[1]} />
       ))}

@@ -1,6 +1,9 @@
 # Your Github Contributions
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
@@ -31,7 +34,6 @@
 </a>
 </p>
 </div>
-
 
 ## 👋 Presenting Your-Github-Contributions
 
@@ -90,7 +92,6 @@ yarn start
 It runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes. You may also see any lint errors in the console.
-
 
 ### 🧱 Build the App for Production
 

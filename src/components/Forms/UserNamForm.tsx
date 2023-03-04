@@ -5,17 +5,17 @@ import {
   Input,
   Tooltip,
   useClipboard,
-} from "@chakra-ui/react";
-import { useEffect, useMemo, useState } from "react";
+} from '@chakra-ui/react';
+import { useEffect, useMemo, useState } from 'react';
 
-import { useNavigate } from "react-router-dom";
-import { HiOutlineClipboardCopy } from "react-icons/hi";
-import { showToastMessage } from "../../utils/toastUtils";
+import { useNavigate } from 'react-router-dom';
+import { HiOutlineClipboardCopy } from 'react-icons/hi';
+import { showToastMessage } from '../../utils/toastUtils';
 
 const UserNameForm = () => {
   const navigate = useNavigate();
-  const { onCopy, setValue, hasCopied } = useClipboard("");
-  const [userName, setUserName] = useState<string>("");
+  const { onCopy, setValue, hasCopied } = useClipboard('');
+  const [userName, setUserName] = useState<string>('');
 
   useMemo(() => {
     const url = `${window.location.protocol}//${window.location.host}/contributions/${userName}`;
@@ -27,20 +27,20 @@ const UserNameForm = () => {
 
   useEffect(() => {
     if (hasCopied) {
-      showToastMessage("success", "Link copied successfully!");
+      showToastMessage('success', 'Link copied successfully!');
     }
   }, [hasCopied]);
 
   return (
     <>
-      <Flex wrap="wrap" gap={4} justifyContent="center" alignItems="center">
+      <Flex alignItems="center" gap={4} justifyContent="center" wrap="wrap">
         <Input
-          width={{ base: "250px", lg: "300px" }}
-          spellCheck={false}
-          type="search"
           autoFocus
           placeholder="Enter Your GitHub Username..."
+          spellCheck={false}
+          type="search"
           value={userName}
+          width={{ base: '250px', lg: '300px' }}
           onChange={(e) => {
             const { value } = e.target;
             setUserName(value);
@@ -48,11 +48,10 @@ const UserNameForm = () => {
         />
         <Tooltip label="Generate">
           <Button
-            px={4}
             colorScheme="teal"
+            px={4}
             variant="solid"
-            onClick={() => userName && navigate(`/contributions/${userName}`)}
-          >
+            onClick={() => userName && navigate(`/contributions/${userName}`)}>
             Generate
           </Button>
         </Tooltip>

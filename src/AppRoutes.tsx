@@ -6,9 +6,9 @@ import UserPage from './pages/UserPage/UserPage';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/contributions/:userName" element={<UserPage />} />
-      <Route path="*" element={<HomePage />} />
+      <Route element={<HomePage />} path="/" />
+      <Route element={<UserPage />} path="/contributions/:userName" />
+      <Route element={<HomePage />} path="*" />
     </Routes>
   );
 };

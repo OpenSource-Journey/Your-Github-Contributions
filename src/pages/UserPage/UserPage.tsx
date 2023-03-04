@@ -8,7 +8,7 @@ import {
   Text,
   Tooltip,
   useClipboard,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -18,42 +18,42 @@ import {
   IssueState,
   PullRequestCountByState,
   PullRequestState,
-} from "github-user-contribution-summary";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
-import { HiOutlineClipboardCopy } from "react-icons/hi";
-import { useParams } from "react-router-dom";
-import ContributionCalendar from "../../components/ContributionCalendar/ContributionCalendar";
-import GithubOrgs from "../../components/GithubOrgs";
-import GithubPopularRepositories from "../../components/GithubPopularRepositories";
-import ResourceDistribution from "../../components/ResourceDistribution/ResourceDistribution";
-import Summary from "../../components/Summary/Summary";
-import { showToastMessage } from "../../utils/toastUtils";
-import UserPageSkeleton from "./UserPageSkeleton";
+} from 'github-user-contribution-summary';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { HiOutlineClipboardCopy } from 'react-icons/hi';
+import { useParams } from 'react-router-dom';
+import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
+import GithubOrgs from '../../components/GithubOrgs';
+import GithubPopularRepositories from '../../components/GithubPopularRepositories';
+import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
+import Summary from '../../components/Summary/Summary';
+import { showToastMessage } from '../../utils/toastUtils';
+import UserPageSkeleton from './UserPageSkeleton';
 
 const UserPage = () => {
-  const { userName = "" } = useParams<{ userName: string }>();
+  const { userName = '' } = useParams<{ userName: string }>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [contributionData, setContributionData] =
     useState<ContributionSummary>();
   const [pullRequestCounts, setPullRequestCounts] =
     useState<PullRequestCountByState>();
   const [issueCounts, setIssueCounts] = useState<IssueCountByState>();
-  const { onCopy, setValue, hasCopied } = useClipboard("");
+  const { onCopy, setValue, hasCopied } = useClipboard('');
 
   const getUserContributionSummary = useCallback(async () => {
     setIsLoading(true);
     setContributionData(undefined);
     const argument = {
       userName,
-      githubToken: process.env.REACT_APP_GITHUB_TOKEN || "",
+      githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
     };
 
     try {
       const response = await getContributionSummary(argument);
       setContributionData(response);
     } catch (error) {
-      console.log("Something went wrong", error);
+      console.log('Something went wrong', error);
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +64,7 @@ const UserPage = () => {
     try {
       const argument = {
         userName,
-        githubToken: process.env.REACT_APP_GITHUB_TOKEN || "",
+        githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
       };
       let pullRequestCountByState: PullRequestCountByState = {
         open: 0,
@@ -79,19 +79,19 @@ const UserPage = () => {
       const closedState = responses[1];
       const mergedState = responses[2];
 
-      if (openState.status === "fulfilled") {
+      if (openState.status === 'fulfilled') {
         pullRequestCountByState = {
           ...pullRequestCountByState,
           open: openState.value.count,
         };
       }
-      if (closedState.status === "fulfilled") {
+      if (closedState.status === 'fulfilled') {
         pullRequestCountByState = {
           ...pullRequestCountByState,
           closed: closedState.value.count,
         };
       }
-      if (mergedState.status === "fulfilled") {
+      if (mergedState.status === 'fulfilled') {
         pullRequestCountByState = {
           ...pullRequestCountByState,
           merged: mergedState.value.count,
@@ -109,7 +109,7 @@ const UserPage = () => {
     try {
       const argument = {
         userName,
-        githubToken: process.env.REACT_APP_GITHUB_TOKEN || "",
+        githubToken: process.env.REACT_APP_GITHUB_TOKEN || '',
       };
       let issueCountByState: IssueCountByState = {
         open: 0,
@@ -122,13 +122,13 @@ const UserPage = () => {
       const openState = responses[0];
       const closedState = responses[1];
 
-      if (openState.status === "fulfilled") {
+      if (openState.status === 'fulfilled') {
         issueCountByState = {
           ...issueCountByState,
           open: openState.value.count,
         };
       }
-      if (closedState.status === "fulfilled") {
+      if (closedState.status === 'fulfilled') {
         issueCountByState = {
           ...issueCountByState,
           closed: closedState.value.count,
@@ -175,7 +175,7 @@ const UserPage = () => {
 
   useEffect(() => {
     if (hasCopied) {
-      showToastMessage("success", "Link copied successfully!");
+      showToastMessage('success', 'Link copied successfully!');
     }
   }, [hasCopied]);
 
@@ -185,56 +185,55 @@ const UserPage = () => {
         <UserPageSkeleton />
       ) : (
         <>
-          <Flex wrap="wrap" width="100%" justifyContent="space-between">
+          <Flex justifyContent="space-between" width="100%" wrap="wrap">
             <Text
-              mb={7}
-              textAlign="center"
+              fontSize={{
+                base: '2xl',
+                lg: '4xl',
+              }}
               fontWeight="semibold"
-              fontSize={{ base: "2xl", lg: "4xl" }}
-            >{`${userName} contributions ✨`}</Text>
+              mb={7}
+              textAlign="center">{`${userName} contributions ✨`}</Text>
             <Flex
-              width={{ base: "100%", lg: "initial" }}
               gap={2}
               justifyContent="center"
-            >
+              width={{ base: '100%', lg: 'initial' }}>
               <Link
                 href={`https://twitter.com/intent/tweet?text=${`Checkout my @github contributions summary 😍 on "Your GitHub Contributions" ✨ 👇 %0A%20%0A${window.location.href} %0A%20%0AGenerate your contributions summary by just entering your GitHub username on https://ygc.sachinchaurasiya.dev`}`}
-                target="_blank"
-              >
+                target="_blank">
                 <Tooltip label="Share it on Twitter">
                   <IconButton
                     aria-label="Twitter"
-                    size="md"
-                    fontSize="lg"
-                    variant="ghost"
                     color="current"
+                    fontSize="lg"
                     icon={<FaTwitter />}
+                    size="md"
+                    variant="ghost"
                   />
                 </Tooltip>
               </Link>
               <Link
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
-                target="_blank"
-              >
+                target="_blank">
                 <Tooltip label="Share it on LinkedIn">
                   <IconButton
                     aria-label="Github"
-                    size="md"
-                    fontSize="lg"
-                    variant="ghost"
                     color="current"
+                    fontSize="lg"
                     icon={<FaLinkedin />}
+                    size="md"
+                    variant="ghost"
                   />
                 </Tooltip>
               </Link>
               <Tooltip label="Copy Url">
                 <IconButton
                   aria-label="Copy Url"
-                  size="md"
-                  fontSize="lg"
-                  variant="ghost"
                   color="current"
+                  fontSize="lg"
                   icon={<HiOutlineClipboardCopy />}
+                  size="md"
+                  variant="ghost"
                   onClick={() => userName && onCopy()}
                 />
               </Tooltip>
@@ -258,8 +257,7 @@ const UserPage = () => {
                 borderColor="gray.200"
                 borderRadius="4px"
                 p={4}
-                shadow="md"
-              >
+                shadow="md">
                 <GithubOrgs
                   organizations={
                     contributionData?.contributedOrganizations ?? []
@@ -271,8 +269,7 @@ const UserPage = () => {
                 borderColor="gray.200"
                 borderRadius="4px"
                 p={4}
-                shadow="md"
-              >
+                shadow="md">
                 <GithubPopularRepositories
                   repositories={contributionData?.popularRepositories ?? []}
                 />

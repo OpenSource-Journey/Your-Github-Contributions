@@ -15,8 +15,7 @@ const SummaryWidget: FC<Props> = ({ title, value }) => {
       borderColor="gray.200"
       borderRadius="4px"
       p={4}
-      shadow="md"
-    >
+      shadow="md">
       <Text color="gray.500" fontSize={['md', 'lg']} textAlign="center">
         {startCase(title.replace('total', ''))}
       </Text>

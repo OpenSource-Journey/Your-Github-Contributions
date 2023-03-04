@@ -49,12 +49,10 @@ const ContributionCalendar: FC<Props> = ({ userContribution }) => {
       borderRadius="4px"
       mt={8}
       p={4}
-      shadow="md"
-    >
+      shadow="md">
       <Text
         fontWeight="medium"
-        my={4}
-      >{`${totalContributions} Contributions in the last year`}</Text>
+        my={4}>{`${totalContributions} Contributions in the last year`}</Text>
       <CalendarHeatmap
         showMonthLabels
         showWeekdayLabels
@@ -72,8 +70,7 @@ const ContributionCalendar: FC<Props> = ({ userContribution }) => {
             key={uniqueId()}
             label={`${
               value ? `${value?.count} Contributions on ${value?.date}` : ''
-            }`}
-          >
+            }`}>
             {rect}
           </Tooltip>
         )}
