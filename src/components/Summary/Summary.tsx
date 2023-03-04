@@ -1,5 +1,5 @@
 import { Grid } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import SummaryWidget from './SummaryWidget/SummaryWidget';
 
 interface Props {
@@ -24,7 +24,8 @@ const Summary: FC<Props> = ({ contributionSummary }) => {
         base: 'repeat(1, 1fr)',
         md: 'repeat(3, 1fr)',
         lg: 'repeat(4, 1fr)',
-      }}>
+      }}
+    >
       {Object.entries(contributionSummary).map((value) => (
         <SummaryWidget key={value[0]} title={value[0]} value={value[1]} />
       ))}

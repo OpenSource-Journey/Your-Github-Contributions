@@ -3,14 +3,14 @@ import {
   PullRequestCountByState,
 } from 'github-user-contribution-summary';
 import { startCase } from 'lodash';
-import React, { FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import {
-  PieChart,
-  Pie,
   Cell,
-  Tooltip,
   Legend,
+  Pie,
+  PieChart,
   ResponsiveContainer,
+  Tooltip,
 } from 'recharts';
 import './ResourcePieChart.css';
 
@@ -32,14 +32,16 @@ const ResourcePieChart: FC<Props> = ({ data }) => {
     <ResponsiveContainer
       className="custom-responsive-container"
       height={400}
-      width={300}>
+      width={300}
+    >
       <PieChart>
         <Pie
           data={graphData}
           dataKey="value"
           innerRadius={100}
           outerRadius={140}
-          paddingAngle={5}>
+          paddingAngle={5}
+        >
           {graphData.map((entry, index) => (
             <Cell
               fill={COLORS_MAP[entry.name as keyof typeof COLORS_MAP]}

@@ -1,5 +1,4 @@
 import { Box, Flex, IconButton, Link, Text } from '@chakra-ui/react';
-import React from 'react';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
@@ -9,7 +8,8 @@ const Footer = () => {
         borderColor="gray.200"
         borderTop="1px solid"
         mx={{ base: 0, lg: 20 }}
-        p={4}>
+        p={4}
+      >
         <Flex alignItems="center" justifyContent="space-between">
           <Box textAlign="center">
             <Text fontWeight="light">

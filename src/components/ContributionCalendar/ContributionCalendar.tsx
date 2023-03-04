@@ -1,7 +1,7 @@
 import { Box, Text, Tooltip } from '@chakra-ui/react';
 import { UserContribution } from 'github-user-contribution-summary';
 import { first, last, uniqueId } from 'lodash';
-import React, { FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import './ContributionCalendar.css';
@@ -49,10 +49,12 @@ const ContributionCalendar: FC<Props> = ({ userContribution }) => {
       borderRadius="4px"
       mt={8}
       p={4}
-      shadow="md">
+      shadow="md"
+    >
       <Text
         fontWeight="medium"
-        my={4}>{`${totalContributions} Contributions in the last year`}</Text>
+        my={4}
+      >{`${totalContributions} Contributions in the last year`}</Text>
       <CalendarHeatmap
         showMonthLabels
         showWeekdayLabels
@@ -70,7 +72,8 @@ const ContributionCalendar: FC<Props> = ({ userContribution }) => {
             key={uniqueId()}
             label={`${
               value ? `${value?.count} Contributions on ${value?.date}` : ''
-            }`}>
+            }`}
+          >
             {rect}
           </Tooltip>
         )}

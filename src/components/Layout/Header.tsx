@@ -1,7 +1,6 @@
 import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
-import React from 'react';
-import { ColorModeSwitcher } from '../ColorModeSwitcher/ColorModeSwitcher';
 import BrandImage from '../../assets/images/octocat.png';
+import { ColorModeSwitcher } from '../ColorModeSwitcher/ColorModeSwitcher';
 
 const Header = () => {
   return (
@@ -10,7 +9,8 @@ const Header = () => {
         borderBottom="1px solid"
         borderColor="gray.200"
         mx={{ base: 0, lg: 20 }}
-        p={4}>
+        p={4}
+      >
         <Flex alignItems="center" justifyContent="space-between">
           <Link _hover={{ textDecoration: 'none' }} href="/">
             <Box textAlign="center">
@@ -28,7 +28,8 @@ const Header = () => {
             <a
               href="https://www.producthunt.com/posts/your-github-contributions?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-your&#0045;github&#0045;contributions"
               rel="noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               <img
                 alt="Your&#0032;GitHub&#0032;Contributions - Generate&#0032;your&#0032;contributions&#0032;✨&#0032;summary&#0032;in&#0032;seconds | Product Hunt"
                 height="54"

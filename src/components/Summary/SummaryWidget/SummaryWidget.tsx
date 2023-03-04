@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import { startCase } from 'lodash';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface Props {
   title: string;
@@ -15,7 +15,8 @@ const SummaryWidget: FC<Props> = ({ title, value }) => {
       borderColor="gray.200"
       borderRadius="4px"
       p={4}
-      shadow="md">
+      shadow="md"
+    >
       <Text color="gray.500" fontSize={['md', 'lg']} textAlign="center">
         {startCase(title.replace('total', ''))}
       </Text>

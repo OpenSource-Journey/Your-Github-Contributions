@@ -1,7 +1,7 @@
 import { Flex, Grid, Image, Link, Text } from '@chakra-ui/react';
 import { OrganizationNode } from 'github-user-contribution-summary';
 
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface Props {
   organizations: OrganizationNode[];
@@ -17,7 +17,8 @@ const GithubOrgs: FC<Props> = ({ organizations }) => {
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(3, 1fr)',
-        }}>
+        }}
+      >
         {organizations.map((userOrganization) => (
           <Link
             _hover={{
@@ -26,7 +27,8 @@ const GithubOrgs: FC<Props> = ({ organizations }) => {
             }}
             href={userOrganization.url}
             key={userOrganization.name}
-            target="_blank">
+            target="_blank"
+          >
             <Flex alignItems="center" gap={8}>
               <Image
                 alt={userOrganization.name}

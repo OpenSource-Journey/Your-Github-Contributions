@@ -3,7 +3,7 @@ import {
   IssueCountByState,
   PullRequestCountByState,
 } from 'github-user-contribution-summary';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import ResourcePieChart from './ResourcePieChart/ResourcePieChart';
 
 interface Props {
@@ -22,13 +22,15 @@ const ResourceDistribution: FC<Props> = ({
       templateColumns={{
         base: 'repeat(1, 1fr)',
         md: 'repeat(2, 1fr)',
-      }}>
+      }}
+    >
       <Box
         border="1px"
         borderColor="gray.200"
         borderRadius="4px"
         p={4}
-        shadow="md">
+        shadow="md"
+      >
         <Text fontWeight="medium" mb={4}>
           Pull Request Distribution
         </Text>
@@ -41,7 +43,8 @@ const ResourceDistribution: FC<Props> = ({
         borderColor="gray.200"
         borderRadius="4px"
         p={4}
-        shadow="md">
+        shadow="md"
+      >
         <Text fontWeight="medium" mb={4}>
           Issue Distribution
         </Text>
