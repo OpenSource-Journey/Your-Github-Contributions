@@ -1,14 +1,14 @@
 import {
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  Image,
-  Link,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
+	Button,
+	Flex,
+	Grid,
+	GridItem,
+	Image,
+	Link,
+	List,
+	ListIcon,
+	ListItem,
+	Text
 } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import UserNameForm from '../../components/Forms/UserNamForm';
@@ -60,79 +60,71 @@ const HomePage = () => {
         summary page for you.
       </Text>
 
-      <Grid
-        templateColumns={{
-          base: 'repeat(1, 1fr)',
-          md: 'repeat(3, 1fr)',
-        }}
-      >
-        <GridItem
-          as={motion.div}
-          whileHover={{
-            scale: 1.1,
-          }}
-          colSpan={{ base: 1, lg: 2 }}
-          order={{ base: 1, lg: 0 }}
-        >
-          <Image src={Mockup1Image} />
-        </GridItem>
+			<Grid
+				templateColumns={{
+					base: 'repeat(1, 1fr)',
+					md: 'repeat(3, 1fr)'
+				}}>
+				<GridItem
+					as={motion.div}
+					whileHover={{
+						scale: 1.1
+					}}
+					colSpan={{ base: 1, lg: 2 }}
+					order={{ base: 1, lg: 0 }}>
+					<Image src={Mockup1Image} />
+				</GridItem>
 
-        <GridItem pt={8}>
-          <Flex height="100%" alignItems="center">
-            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
-              <ListItem>
-                <ListIcon as={BsCheckCircle} color="teal" /> Contribution
-                Summary Widgets
-              </ListItem>
-              <ListItem>
-                <ListIcon as={BsCheckCircle} color="teal" /> Pull Requests
-                Distribution Graph
-              </ListItem>
-              <ListItem>
-                <ListIcon as={BsCheckCircle} color="teal" /> Issues Distribution
-                Graph
-              </ListItem>
-            </List>
-          </Flex>
-        </GridItem>
-      </Grid>
+				<GridItem pt={8}>
+					<Flex height="100%" alignItems="center">
+						<List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+							<ListItem>
+								<ListIcon as={BsCheckCircle} color="teal" /> Contribution Summary Widgets
+							</ListItem>
+							<ListItem>
+								<ListIcon as={BsCheckCircle} color="teal" /> Pull Requests Distribution
+								Graph
+							</ListItem>
+							<ListItem>
+								<ListIcon as={BsCheckCircle} color="teal" /> Issues Distribution Graph
+							</ListItem>
+						</List>
+					</Flex>
+				</GridItem>
+			</Grid>
 
-      <Grid
-        templateColumns={{
-          base: 'repeat(1, 1fr)',
-          md: 'repeat(3, 1fr)',
-        }}
-      >
-        <GridItem pt={8}>
-          <Flex height="100%" alignItems="center">
-            <List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
-              <ListItem>
-                <ListIcon as={BsCheckCircle} color="teal" /> Contribution Graph
-              </ListItem>
-              <ListItem>
-                <ListIcon as={BsCheckCircle} color="teal" /> Contributed
-                Organizations
-              </ListItem>
-              <ListItem>
-                <ListIcon as={BsCheckCircle} color="teal" /> Popular
-                Repositories
-              </ListItem>
-            </List>
-          </Flex>
-        </GridItem>
+			<Grid
+				templateColumns={{
+					base: 'repeat(1, 1fr)',
+					md: 'repeat(3, 1fr)'
+				}}>
+				<GridItem pt={8}>
+					<Flex height="100%" alignItems="center">
+						<List fontSize="2xl" lineHeight={1.5} ml={{ base: 4 }}>
+							<ListItem>
+								<ListIcon as={BsCheckCircle} color="teal" /> Contribution Graph
+							</ListItem>
+							<ListItem>
+								<ListIcon as={BsCheckCircle} color="teal" /> Contributed Organizations
+							</ListItem>
+							<ListItem>
+								<ListIcon as={BsCheckCircle} color="teal" /> Popular Repositories
+							</ListItem>
+						</List>
+					</Flex>
+				</GridItem>
 
-        <GridItem
-          as={motion.div}
-          whileHover={{
-            scale: 1.1,
-          }}
-          colSpan={{ base: 1, lg: 2 }}
-        >
-          <Image src={Mockup2Image} />
-        </GridItem>
-      </Grid>
-    </Grid>
-  );
+				<GridItem
+					as={motion.div}
+					whileHover={{
+						scale: 1.1
+					}}
+					colSpan={{ base: 1, lg: 2 }}>
+					<Image src={Mockup2Image} />
+				</GridItem>
+			</Grid>
+		</Grid>
+	);
 };
 
 export default HomePage;
