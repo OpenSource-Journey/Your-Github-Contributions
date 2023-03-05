@@ -193,14 +193,17 @@ const UserPage = () => {
               }}
               fontWeight="semibold"
               mb={7}
-              textAlign="center">{`${userName} contributions ✨`}</Text>
+              textAlign="center"
+            >{`${userName} contributions ✨`}</Text>
             <Flex
               gap={2}
               justifyContent="center"
-              width={{ base: '100%', lg: 'initial' }}>
+              width={{ base: '100%', lg: 'initial' }}
+            >
               <Link
                 href={`https://twitter.com/intent/tweet?text=${`Checkout my @github contributions summary 😍 on "Your GitHub Contributions" ✨ 👇 %0A%20%0A${window.location.href} %0A%20%0AGenerate your contributions summary by just entering your GitHub username on https://ygc.sachinchaurasiya.dev`}`}
-                target="_blank">
+                target="_blank"
+              >
                 <Tooltip label="Share it on Twitter">
                   <IconButton
                     aria-label="Twitter"
@@ -214,7 +217,8 @@ const UserPage = () => {
               </Link>
               <Link
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
-                target="_blank">
+                target="_blank"
+              >
                 <Tooltip label="Share it on LinkedIn">
                   <IconButton
                     aria-label="Github"
@@ -257,7 +261,8 @@ const UserPage = () => {
                 borderColor="gray.200"
                 borderRadius="4px"
                 p={4}
-                shadow="md">
+                shadow="md"
+              >
                 <GithubOrgs
                   organizations={
                     contributionData?.contributedOrganizations ?? []
@@ -269,7 +274,8 @@ const UserPage = () => {
                 borderColor="gray.200"
                 borderRadius="4px"
                 p={4}
-                shadow="md">
+                shadow="md"
+              >
                 <GithubPopularRepositories
                   repositories={contributionData?.popularRepositories ?? []}
                 />
