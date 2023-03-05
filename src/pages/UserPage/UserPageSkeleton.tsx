@@ -7,11 +7,9 @@ import {
   SkeletonText,
 } from '@chakra-ui/react';
 
-const UserPageSkeleton = () => {
-  function uniqueId(): import('react').Key | null | undefined {
-    throw new Error('Function not implemented.');
-  }
+import { uniqueId } from 'lodash';
 
+const UserPageSkeleton = () => {
   return (
     <Box>
       <SkeletonText
