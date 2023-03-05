@@ -34,7 +34,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"./**/*.{js,jsx,ts,tsx,json}\"",
     "lint:fix": "eslint './**/*.{js,jsx,ts,tsx,json}' --fix",
-    "pretty": "prettier . --config './.prettierrc.yaml' --ignore-path './.prettierignore'  --write",
+    "pretty": "prettier . --config '.prettierrc.yaml' --ignore-path '.prettierignore'  --write",
     "prepare": "husky install",
     "pre-commit": "lint-staged --concurrent false"
   },
