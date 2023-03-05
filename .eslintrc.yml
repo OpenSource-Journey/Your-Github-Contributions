@@ -9,7 +9,6 @@ extends:
   - plugin:jest/style
   - plugin:jest-formatting/recommended
   - plugin:@typescript-eslint/recommended
-  - plugin:prettier/recommended
   - prettier
 overrides: []
 settings:
