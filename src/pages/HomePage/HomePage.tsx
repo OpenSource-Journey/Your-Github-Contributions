@@ -28,6 +28,7 @@ const HomePage = () => {
 
   return (
     <Grid gap={8}>
+	<Flex justifyContent="center">	
       <Link
         _hover={{ textDecoration: "none" }}
         href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
@@ -51,6 +52,7 @@ const HomePage = () => {
           Star on GitHub
         </Button>
       </Link>
+	</Flex>
       <Text
         lineHeight={1}
         fontSize={{ base: "4xl", lg: "6xl" }}
