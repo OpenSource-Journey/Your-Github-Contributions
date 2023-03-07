@@ -32,6 +32,8 @@ const HomePage = () => {
         _hover={{ textDecoration: "none" }}
         href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
         target="_blank"
+        margin="auto"
+        width="max-content"
       >
         <Button
           as={motion.button}
