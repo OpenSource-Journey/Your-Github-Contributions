@@ -31,8 +31,8 @@ body:
       label: Checklist
       multiple: true
       options:
-          - [ ] I have searched the existing issues to make sure this is not a duplicate
-          - [ ] I have checked the documentation and found no answer
+          - I have searched the existing issues to make sure this is not a duplicate
+          - I have checked the documentation and found no answer
     validations:
       required: true
 
