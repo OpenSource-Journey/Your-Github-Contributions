@@ -26,7 +26,7 @@ body:
       required: true
 
   - type: textarea
-    id: screen shot
+    id: screenshot
     attributes:
       label: Please provide an example screenshot
       placeholder: screenshot
