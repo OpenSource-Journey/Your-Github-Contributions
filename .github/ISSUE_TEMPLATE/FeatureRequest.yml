@@ -1,7 +1,7 @@
 name: Feature Request
 description: File a feature request
 title: "[Feature]: "
-labels: ["Feature", "triage"]
+labels: ["Feature"]
 body:
   - type: markdown
     attributes:
@@ -22,6 +22,14 @@ body:
       label: Suggest an idea for this project ?
       description: Also tell us, what did you expect to happen?
       placeholder: Tell us what you see!
+    validations:
+      required: true
+
+  - type: textarea
+    id: screen shot
+    attributes:
+      label: Please provide an example screenshot
+      placeholder: screenshot
     validations:
       required: true
 
