@@ -25,6 +25,15 @@ body:
       value: "A bug happened!"
     validations:
       required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Please provide an bug screenshot
+      placeholder: screenshot
+    validations:
+      required: true
+
   - type: dropdown
     id: browsers
     attributes:
