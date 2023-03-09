@@ -1,7 +1,7 @@
 import { Flex, Grid, Image, Link, Text } from '@chakra-ui/react';
 import { OrganizationNode } from 'github-user-contribution-summary';
 
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface Props {
   organizations: OrganizationNode[];

@@ -3,7 +3,7 @@ import {
   IssueCountByState,
   PullRequestCountByState,
 } from 'github-user-contribution-summary';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import ResourcePieChart from './ResourcePieChart/ResourcePieChart';
 
 interface Props {

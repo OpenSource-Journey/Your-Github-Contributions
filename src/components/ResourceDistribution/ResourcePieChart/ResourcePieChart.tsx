@@ -3,14 +3,14 @@ import {
   PullRequestCountByState,
 } from 'github-user-contribution-summary';
 import { startCase } from 'lodash';
-import React, { FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import {
-  PieChart,
-  Pie,
   Cell,
-  Tooltip,
   Legend,
+  Pie,
+  PieChart,
   ResponsiveContainer,
+  Tooltip,
 } from 'recharts';
 import './ResourcePieChart.css';
 

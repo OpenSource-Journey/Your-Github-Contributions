@@ -6,18 +6,19 @@ import {
   SkeletonCircle,
   SkeletonText,
 } from '@chakra-ui/react';
-import React from 'react';
+
+import { uniqueId } from 'lodash';
 
 const UserPageSkeleton = () => {
   return (
     <Box>
       <SkeletonText
-        startColor="#4a5568"
         endColor="#1a202c"
         mt="4"
         noOfLines={1}
-        spacing="2"
         skeletonHeight="6"
+        spacing="2"
+        startColor="#4a5568"
       />
       <Grid
         gap={8}
@@ -29,7 +30,7 @@ const UserPageSkeleton = () => {
         }}
       >
         {Array.from({ length: 8 }).map(() => (
-          <GridItem>
+          <GridItem key={uniqueId()}>
             <Box
               as="div"
               border="1px"
@@ -39,12 +40,12 @@ const UserPageSkeleton = () => {
               shadow="md"
             >
               <SkeletonText
-                startColor="#4a5568"
                 endColor="#1a202c"
                 mt="4"
                 noOfLines={2}
-                spacing="4"
                 skeletonHeight="2"
+                spacing="4"
+                startColor="#4a5568"
               />
             </Box>
           </GridItem>
@@ -66,7 +67,7 @@ const UserPageSkeleton = () => {
           p={4}
           shadow="md"
         >
-          <Flex height="100%" justifyContent="center" alignItems="center">
+          <Flex alignItems="center" height="100%" justifyContent="center">
             <SkeletonCircle size="80" />
           </Flex>
         </Box>
@@ -78,35 +79,35 @@ const UserPageSkeleton = () => {
           p={4}
           shadow="md"
         >
-          <Flex height="100%" justifyContent="center" alignItems="center">
+          <Flex alignItems="center" height="100%" justifyContent="center">
             <SkeletonCircle size="80" />
           </Flex>
         </Box>
       </Grid>
       <Box
-        mt={8}
         as="div"
         border="1px"
         borderColor="gray.200"
         borderRadius="4px"
+        mt={8}
         p={4}
         shadow="md"
       >
         <SkeletonText
-          startColor="#4a5568"
           endColor="#1a202c"
           mt="4"
           noOfLines={8}
-          spacing="4"
           skeletonHeight="2"
+          spacing="4"
+          startColor="#4a5568"
         />
       </Box>
       <Box
-        mt={8}
         as="div"
         border="1px"
         borderColor="gray.200"
         borderRadius="4px"
+        mt={8}
         p={4}
         shadow="md"
       >
@@ -119,14 +120,14 @@ const UserPageSkeleton = () => {
           }}
         >
           {Array.from({ length: 6 }).map(() => (
-            <GridItem>
+            <GridItem key={uniqueId()}>
               <SkeletonText
-                startColor="#4a5568"
                 endColor="#1a202c"
                 mt="4"
                 noOfLines={2}
-                spacing="4"
                 skeletonHeight="2"
+                spacing="4"
+                startColor="#4a5568"
               />
             </GridItem>
           ))}
@@ -145,7 +146,7 @@ const UserPageSkeleton = () => {
         }}
       >
         {Array.from({ length: 8 }).map(() => (
-          <GridItem>
+          <GridItem key={uniqueId()}>
             <Box
               as="div"
               border="1px"
@@ -155,12 +156,12 @@ const UserPageSkeleton = () => {
               shadow="md"
             >
               <SkeletonText
-                startColor="#4a5568"
                 endColor="#1a202c"
                 mt="4"
                 noOfLines={2}
-                spacing="4"
                 skeletonHeight="2"
+                spacing="4"
+                startColor="#4a5568"
               />
             </Box>
           </GridItem>

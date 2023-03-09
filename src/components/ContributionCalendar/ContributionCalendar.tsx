@@ -1,7 +1,7 @@
 import { Box, Text, Tooltip } from '@chakra-ui/react';
 import { UserContribution } from 'github-user-contribution-summary';
 import { first, last, uniqueId } from 'lodash';
-import React, { FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import './ContributionCalendar.css';

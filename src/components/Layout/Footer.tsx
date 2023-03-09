@@ -1,15 +1,14 @@
 import { Box, Flex, IconButton, Link, Text } from '@chakra-ui/react';
-import React from 'react';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer>
       <Box
-        p={4}
-        mx={{ base: 0, lg: 20 }}
-        borderTop="1px solid"
         borderColor="gray.200"
+        borderTop="1px solid"
+        mx={{ base: 0, lg: 20 }}
+        p={4}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Box textAlign="center">
@@ -27,21 +26,21 @@ const Footer = () => {
             <Link href="https://github.com/Sachin-chaurasiya" target="_blank">
               <IconButton
                 aria-label="Github"
-                size="md"
-                fontSize="lg"
-                variant="ghost"
                 color="current"
+                fontSize="lg"
                 icon={<FaGithub />}
+                size="md"
+                variant="ghost"
               />
             </Link>
             <Link href="https://twitter.com/sachindotcom" target="_blank">
               <IconButton
                 aria-label="Twitter"
-                size="md"
-                fontSize="lg"
-                variant="ghost"
                 color="current"
+                fontSize="lg"
                 icon={<FaTwitter />}
+                size="md"
+                variant="ghost"
               />
             </Link>
           </Box>

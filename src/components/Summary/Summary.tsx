@@ -1,5 +1,5 @@
 import { Grid } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import SummaryWidget from './SummaryWidget/SummaryWidget';
 
 interface Props {

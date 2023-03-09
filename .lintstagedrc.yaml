@@ -1,0 +1,8 @@
+'*.{ts,tsx,js,jsx}':
+  # Organize Imports
+  - organize-imports-cli
+  # Run ESLint
+  - eslint 'src/**/*.{js,jsx,ts,tsx,json}' --fix
+
+# Run Prettier
+'src/**': prettier . --config './.prettierrc.yaml' --ignore-path './.prettierignore'  --write

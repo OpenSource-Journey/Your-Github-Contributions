@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import { startCase } from 'lodash';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface Props {
   title: string;

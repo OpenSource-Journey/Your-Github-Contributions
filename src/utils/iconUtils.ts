@@ -1,52 +1,52 @@
 import {
-  SiTypescript,
-  SiJavascript,
-  SiPython,
-  SiPhp,
-  SiReact,
-  SiHtml5,
   SiCss3,
-  SiRuby,
-  SiSwift,
-  SiKotlin,
-  SiRust,
-  SiPerl,
-  SiMysql,
-  SiPostgresql,
   SiDart,
-} from "react-icons/si";
+  SiHtml5,
+  SiJavascript,
+  SiKotlin,
+  SiMysql,
+  SiPerl,
+  SiPhp,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiRuby,
+  SiRust,
+  SiSwift,
+  SiTypescript,
+} from 'react-icons/si';
 
 export const getIconByLanguage = (language: string) => {
   switch (language) {
-    case "TypeScript":
+    case 'TypeScript':
       return SiTypescript;
-    case "JavaScript":
+    case 'JavaScript':
       return SiJavascript;
-    case "React":
+    case 'React':
       return SiReact;
-    case "Python":
+    case 'Python':
       return SiPython;
-    case "PHP":
+    case 'PHP':
       return SiPhp;
-    case "HTML":
+    case 'HTML':
       return SiHtml5;
-    case "CSS":
+    case 'CSS':
       return SiCss3;
-    case "Ruby":
+    case 'Ruby':
       return SiRuby;
-    case "Swift":
+    case 'Swift':
       return SiSwift;
-    case "Kotlin":
+    case 'Kotlin':
       return SiKotlin;
-    case "Rust":
+    case 'Rust':
       return SiRust;
-    case "Perl":
+    case 'Perl':
       return SiPerl;
-    case "MySQL":
+    case 'MySQL':
       return SiMysql;
-    case "PostgreSQL":
+    case 'PostgreSQL':
       return SiPostgresql;
-    case "Dart":
+    case 'Dart':
       return SiDart;
 
     default:

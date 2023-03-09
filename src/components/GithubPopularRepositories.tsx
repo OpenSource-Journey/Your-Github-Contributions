@@ -1,6 +1,6 @@
 import { Flex, Grid, Icon, Link, Text, useColorMode } from '@chakra-ui/react';
 import { PinnedItemNode } from 'github-user-contribution-summary';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { GoRepo } from 'react-icons/go';
 import { getIconByLanguage } from '../utils/iconUtils';
 
@@ -24,38 +24,44 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
         }}
       >
         {repositories.map((repository) => {
-          if(Object.entries(repository).length === 0) return <></>
-          return <Link
-            _hover={{
-              textDecoration: 'none',
-              background:
-                colorMode.colorMode === 'dark' ? 'whiteAlpha.200' : 'gray.100',
-            }}
-            border="1px"
-            borderColor="gray.200"
-            borderRadius="4px"
-            href={repository.url}
-            key={repository.name}
-            p={2}
-            target="_blank"
-          >
-            <Flex gap={2}>
-              <GoRepo style={{ alignSelf: 'center' }} />
-              <Text>{repository.nameWithOwner}</Text>
-              <Icon
-                alignSelf="center"
-                as={getIconByLanguage(repository.primaryLanguage.name)}
-                color={repository.primaryLanguage.color}
-                marginLeft="auto"
-              />
-            </Flex>
+          if (Object.entries(repository).length === 0) {
+            return <></>;
+          }
 
-            <Text color="gray.500" mt={1}>
-              {repository.description}
-            </Text>
-          </Link>
-        }
-        )}
+          return (
+            <Link
+              _hover={{
+                textDecoration: 'none',
+                background:
+                  colorMode.colorMode === 'dark'
+                    ? 'whiteAlpha.200'
+                    : 'gray.100',
+              }}
+              border="1px"
+              borderColor="gray.200"
+              borderRadius="4px"
+              href={repository.url}
+              key={repository.name}
+              p={2}
+              target="_blank"
+            >
+              <Flex gap={2}>
+                <GoRepo style={{ alignSelf: 'center' }} />
+                <Text>{repository.nameWithOwner}</Text>
+                <Icon
+                  alignSelf="center"
+                  as={getIconByLanguage(repository.primaryLanguage.name)}
+                  color={repository.primaryLanguage.color}
+                  marginLeft="auto"
+                />
+              </Flex>
+
+              <Text color="gray.500" mt={1}>
+                {repository.description}
+              </Text>
+            </Link>
+          );
+        })}
       </Grid>
     </>
   );
