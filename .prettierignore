@@ -21,3 +21,9 @@ dist/
 
 # macOS
 .DS_Store
+
+# Assets
+*.svg
+*.png
+*.ico
+*.ttf

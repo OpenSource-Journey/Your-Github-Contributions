@@ -9,22 +9,30 @@ import {
   ListIcon,
   ListItem,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
-import Mockup1Image from '../../assets/images/Mockup-1.png';
-import Mockup2Image from '../../assets/images/Mockup-2.png';
+import Mockup1ImageDark from '../../assets/images/Mockup-1.png';
+import Mockup2ImageDark from '../../assets/images/Mockup-2.png';
+import Mockup1ImageLight from '../../assets/images/Mockup-light-1.png';
+import Mockup2ImageLight from '../../assets/images/Mockup-light-2.png';
 import UserNameForm from '../../components/Forms/UserNamForm';
 
 import { motion } from 'framer-motion';
 import { BsCheckCircle } from 'react-icons/bs';
 
 const HomePage = () => {
+  const SwitchMockup1 = useColorModeValue(Mockup1ImageLight, Mockup1ImageDark);
+  const SwitchMockup2 = useColorModeValue(Mockup2ImageLight, Mockup2ImageDark);
+
   return (
     <Grid gap={8}>
       <Link
         _hover={{ textDecoration: 'none' }}
         href="https://github.com/OpenSource-Journey/Your-Github-Contributions"
+        margin="auto"
         target="_blank"
+        width="max-content"
       >
         <Button
           as={motion.button}
@@ -71,7 +79,7 @@ const HomePage = () => {
             scale: 1.1,
           }}
         >
-          <Image src={Mockup1Image} />
+          <Image src={SwitchMockup1} />
         </GridItem>
 
         <GridItem pt={8}>
@@ -135,7 +143,7 @@ const HomePage = () => {
             scale: 1.1,
           }}
         >
-          <Image src={Mockup2Image} />
+          <Image src={SwitchMockup2} />
         </GridItem>
       </Grid>
     </Grid>
