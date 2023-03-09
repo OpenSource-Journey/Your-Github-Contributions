@@ -2,14 +2,9 @@
 
 Before submitting a pull request, please make sure that your changes meet the following criteria:
 
-- [ ] Your code is well-formatted and follows our coding conventions.
-- [ ] Your changes have been tested thoroughly and do not introduce any new bugs.
-- [ ] You have updated the documentation to reflect your changes.
-- [ ] You are Agreeing to the code of conduct
-
-## Description
-
-Please provide a brief description of the changes you are proposing.
+- [ ]  Ensure that your code adheres to our coding conventions and is properly formatted.
+- [ ] Test your changes extensively to ensure that they do not introduce any new bugs.
+- [ ] Confirm that you agree to the code of conduct.
 
 ## Related Issues
 
