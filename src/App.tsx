@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { ChakraProvider, Box, theme } from '@chakra-ui/react';
-import Header from './components/Layout/Header';
-import Footer from './components/Layout/Footer';
+import { Box, ChakraProvider, theme } from '@chakra-ui/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import AppRoutes from './AppRoutes';
+import ErrorFallback from './components/ErrorFallback/ErrorFallback';
+import Footer from './components/Layout/Footer';
+import Header from './components/Layout/Header';
 import ToastMessage from './components/ToastMessage/ToastMessage';
 
 export const App = () => {
@@ -13,11 +13,13 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <ToastMessage />
       <Router>
-        <Header />
-        <Box as="main" my={4} p={8} px={{ base: '18', lg: '36' }}>
-          <AppRoutes />
-        </Box>
-        <Footer />
+        <ErrorFallback>
+          <Header />
+          <Box as="main" my={4} p={8} px={{ base: '18', lg: '36' }}>
+            <AppRoutes />
+          </Box>
+          <Footer />
+        </ErrorFallback>
       </Router>
     </ChakraProvider>
   );
