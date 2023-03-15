@@ -162,7 +162,7 @@ const UserPage = () => {
   }, [contributionData]);
 
   useMemo(() => {
-    const url = `${window.location.protocol}//${window.location.host}/contributions/${userName}`;
+    const url = `${window.location.protocol}//${window.location.host}/${userName}`;
 
     setValue(url);
 

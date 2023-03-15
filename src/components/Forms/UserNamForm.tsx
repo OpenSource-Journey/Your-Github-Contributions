@@ -18,7 +18,7 @@ const UserNameForm = () => {
   const [userName, setUserName] = useState<string>('');
 
   useMemo(() => {
-    const url = `${window.location.protocol}//${window.location.host}/contributions/${userName}`;
+    const url = `${window.location.protocol}//${window.location.host}/${userName}`;
 
     setValue(url);
 
@@ -32,7 +32,7 @@ const UserNameForm = () => {
   }, [hasCopied]);
 
   const handleSubmit = () => {
-    userName && navigate(`/contributions/${userName}`);
+    userName && navigate(`/${userName}`);
   };
 
   return (
