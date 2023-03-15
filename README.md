@@ -41,11 +41,25 @@ You'll be surprised at how effortless and speedy it is to create an impressive c
 
 Don't hesitate any longer! Give it a try by visiting https://ygc.sachinchaurasiya.dev/ and share your feedback with us. We're excited to hear your thoughts!
 
+Here is an example of a Contribution Summary Page https://ygc.sachinchaurasiya.dev/Sachin-chaurasiya
+
+![screenshot1](https://github.com/OpenSource-Journey/Your-Github-Contributions/blob/main/src/assets/images/Mockup-1.png)
+
+![screenshot2](https://github.com/OpenSource-Journey/Your-Github-Contributions/blob/main/src/assets/images/Mockup-2.png)
+
 If you don't want to miss any updates, please show your support by giving the project a ⭐ 🚀.
 
 We extend a massive THANK YOU to all our supporters!
 
 [![Stargazers repo roster for @OpenSource-Journey/Your-Github-Contributions](https://reporoster.com/stars/OpenSource-Journey/Your-Github-Contributions)](https://github.com/OpenSource-Journey/Your-Github-Contributions/stargazers)
+
+## Tech Stack
+
+Your GitHub Contributions was built using the following technologies:
+
+- [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [ChakraUI](https://chakra-ui.com/) - A simple, modular and accessible component library
+
 
 ## 🤔 How to Set up `Your-Github-Contributions` for Development?
 
@@ -137,6 +151,10 @@ yarn build
 ```
 
 It builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+
+## 🛡️ License
+
+Your GitHub Contributions is licensed under the MIT License - see the [LICENSE](https://github.com/OpenSource-Journey/Your-Github-Contributions/blob/main/LICENSE) file for details.
 
 ## ✨ Contributors
 
