@@ -1,7 +1,7 @@
 name: Feature Request
 description: File a feature request
-title: "[Feature]: "
-labels: ["Feature"]
+title: '[Feature]: '
+labels: ['Feature']
 body:
   - type: markdown
     attributes:
@@ -30,20 +30,18 @@ body:
       label: Checklist
       multiple: true
       options:
-          - I have searched the existing issues to make sure this is not a duplicate
-          - I have checked the documentation and found no answer
+        - I have searched the existing issues to make sure this is not a duplicate
+        - I have checked the documentation and found no answer
     validations:
       required: true
-
 
   - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this feature request, you agree to follow our [Code of Conduct](
+      description:
+        By submitting this feature request, you agree to follow our [Code of Conduct](
         https://github.com/OpenSource-Journey/Your-Github-Contributions/blob/main/CODE_OF_CONDUCT.md))
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
-
-
