@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^2.4.4",
+    "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@testing-library/jest-dom": "^5.16.4",
@@ -20,7 +20,6 @@
     "react-calendar-heatmap": "^1.9.0",
     "react-dom": "^18.1.0",
     "react-error-boundary": "^3.1.4",
-    "react-icons": "^3.0.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
@@ -52,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-icons": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.35.0",
