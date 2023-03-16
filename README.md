@@ -62,7 +62,6 @@ Your GitHub Contributions was built using the following technologies:
 - [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [ChakraUI](https://chakra-ui.com/) - A simple, modular and accessible component library
 
-
 ## 🤔 How to Set up `Your-Github-Contributions` for Development?
 
 <p align="center">
