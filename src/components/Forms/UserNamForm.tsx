@@ -51,7 +51,13 @@ const UserNameForm = () => {
           }}
         />
         <Tooltip label="Generate">
-          <Button colorScheme="teal" px={4} type="submit" variant="solid">
+          <Button
+            bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
+            colorScheme="teal"
+            px={4}
+            type="submit"
+            variant="solid"
+          >
             Generate
           </Button>
         </Tooltip>
