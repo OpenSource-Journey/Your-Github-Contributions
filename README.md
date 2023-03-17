@@ -1,9 +1,7 @@
 # Your Github Contributions
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
@@ -175,6 +173,7 @@ We value all contributions, no matter their size! To get started, please refer t
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hat52"><img src="https://avatars.githubusercontent.com/u/44437268?v=4?s=100" width="100px;" alt="Hamza Ali"/><br /><sub><b>Hamza Ali</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Hat52" title="Code">💻</a> <a href="#ideas-Hat52" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://shailesh-parmar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/71748675?v=4?s=100" width="100px;" alt="Shailesh Parmar"/><br /><sub><b>Shailesh Parmar</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=ShaileshParmar11" title="Code">💻</a> <a href="#ideas-ShaileshParmar11" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-ShaileshParmar11" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jayakumar03"><img src="https://avatars.githubusercontent.com/u/86454250?v=4?s=100" width="100px;" alt="Jaya Kumar"/><br /><sub><b>Jaya Kumar</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Jayakumar03" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mayukh551"><img src="https://avatars.githubusercontent.com/u/82811112?v=4?s=100" width="100px;" alt="Mayukh Bhowmick"/><br /><sub><b>Mayukh Bhowmick</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=mayukh551" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
