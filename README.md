@@ -59,6 +59,10 @@ Your GitHub Contributions was built using the following technologies:
 
 - [ReactJs](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [ChakraUI](https://chakra-ui.com/) - A simple, modular and accessible component library
+- [TypeScript](https://www.typescriptlang.org) - A development tool for static type checking
+- [React Icons](https://react-icons.github.io/react-icons/) - A Icons library for ReactJs
+- [Framer Motion](https://www.framer.com/motion/) - A animation library for ReactJs
+- [Recharts](https://recharts.org/en-US/) - A chart library for ReactJs
 
 
 ## 🤔 How to Set up `Your-Github-Contributions` for Development?
