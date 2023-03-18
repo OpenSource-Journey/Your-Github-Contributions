@@ -1,0 +1,19 @@
+name: Greeting message
+on:
+  fork:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: '<h3>Hey! contributor, thank you for opening an Issue 🎉.</h3>'
+          pr-message: '<h3>Hey! contributor, thank you for opening a Pull Request 🎉.</h3>'
+          footer: "We will review your submission soon and give you helpful feedback. If you think it's something urgent, feel free to reach out <a href='https://www.linkedin.com/in/sachin-chaurasiya/'>Sachin Chaurasiya</a> on <b>LinkedIn</b>. Show your support by <b>starring ⭐</b> this repository. Thank you and we appreciate your contribution to <b>open source!</b>"
