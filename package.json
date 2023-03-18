@@ -37,7 +37,8 @@
     "lint:fix": "eslint './**/*.{js,jsx,ts,tsx,json}' --fix",
     "pretty": "prettier . --config '.prettierrc.yaml' --ignore-path '.prettierignore'  --write",
     "prepare": "husky install",
-    "pre-commit": "lint-staged --concurrent false"
+    "pre-commit": "lint-staged --concurrent false",
+    "env": "cp .env.example .env"
   },
   "browserslist": {
     "production": [

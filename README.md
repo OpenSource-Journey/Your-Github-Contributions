@@ -1,7 +1,9 @@
 # Your Github Contributions
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
@@ -64,7 +66,6 @@ Your GitHub Contributions was built using the following technologies:
 - [Framer Motion](https://www.framer.com/motion/) - A animation library for ReactJs
 - [Recharts](https://recharts.org/en-US/) - A chart library for ReactJs
 
-
 ## 🤔 How to Set up `Your-Github-Contributions` for Development?
 
 <p align="center">
@@ -86,38 +87,24 @@ Once forked, you can clone the repo by clicking the `Clone or Download` button o
 
 Please change the directory after cloning the repository using the `cd <folder-name>` command.
 
+> **Note** For Development we recommend using the `yarn`
+
+```shell
+npm install --global yarn
+```
+
 ### ⬇️ Install Dependencies
 
 Next, install the dependencies by running the following command in the `Your-Github-Contributions` repo:
 
 ```bash
-npm install
-```
-
-Or
-
-```bash
 yarn install
 ```
 
-### ⚙️ Create `.env` file and add your GitHub access token
+### ⚙️ Copy `.env.example` to `.env`.
 
 ```shell
-# from the project root directory create a `.env` file
-
-touch .env
-
-```
-
-```env
-REACT_APP_GITHUB_TOKEN=<your_github_access_token>
-
-Replace <your_github_access_token> with your personal access token.
-
-Example:
-
-REACT_APP_GITHUB_TOKEN=BShC9PyEF1HdLh5lllgtspY8ylBqEpOxkvi
-
+yarn run env
 ```
 
 > To get your personal access token you can refer this guide [creating-a-personal-access-token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
@@ -125,12 +112,6 @@ REACT_APP_GITHUB_TOKEN=BShC9PyEF1HdLh5lllgtspY8ylBqEpOxkvi
 ### 🦄 Start the Development Mode
 
 Use the following command to start the app in the development mode:
-
-```bash
-npm start
-```
-
-Or
 
 ```bash
 yarn start
@@ -143,12 +124,6 @@ The page will reload when you make changes. You may also see any lint errors in 
 ### 🧱 Build the App for Production
 
 Use the following command to build the app for production:
-
-```bash
-npm run build
-```
-
-Or
 
 ```bash
 yarn build
