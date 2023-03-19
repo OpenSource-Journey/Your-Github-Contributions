@@ -202,7 +202,7 @@ const UserPage = () => {
         <UserPageSkeleton />
       ) : (
         <Box as="div" ref={containerRef}>
-          <Helmet>
+          <Helmet prioritizeSeoTags>
             <meta content={ogImageDataUrl} property="og:image" />
           </Helmet>
           <Flex justifyContent="space-between" width="100%" wrap="wrap">
