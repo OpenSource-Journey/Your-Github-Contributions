@@ -2,11 +2,14 @@ import { FC } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface PageHeadProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
-const PageHead: FC<PageHeadProps> = ({ title, description }) => {
+const PageHead: FC<PageHeadProps> = ({
+  title = 'Your GitHub Contributions',
+  description = 'Generate your contributions summary in seconds.',
+}) => {
   return (
     <Helmet>
       <title>{title}</title>
