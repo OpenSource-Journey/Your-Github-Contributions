@@ -19,9 +19,7 @@ import {
   PullRequestCountByState,
   PullRequestState,
 } from 'github-user-contribution-summary';
-import { toPng } from 'html-to-image';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { useParams } from 'react-router-dom';
@@ -34,7 +32,6 @@ import { showToastMessage } from '../../utils/toastUtils';
 import UserPageSkeleton from './UserPageSkeleton';
 
 const UserPage = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const { userName = '' } = useParams<{ userName: string }>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [contributionData, setContributionData] =
@@ -43,8 +40,6 @@ const UserPage = () => {
     useState<PullRequestCountByState>();
   const [issueCounts, setIssueCounts] = useState<IssueCountByState>();
   const { onCopy, setValue, hasCopied } = useClipboard('');
-
-  const [ogImageDataUrl, setOgImageDataUrl] = useState<string>('');
 
   const getUserContributionSummary = useCallback(async () => {
     setIsLoading(true);
@@ -184,27 +179,12 @@ const UserPage = () => {
     }
   }, [hasCopied]);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      toPng(containerRef.current, { cacheBust: true })
-        .then((dataUrl) => {
-          setOgImageDataUrl(dataUrl);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [containerRef]);
-
   return (
     <>
       {isLoading ? (
         <UserPageSkeleton />
       ) : (
-        <Box as="div" ref={containerRef}>
-          <Helmet prioritizeSeoTags>
-            <meta content={ogImageDataUrl} property="og:image" />
-          </Helmet>
+        <>
           <Flex justifyContent="space-between" width="100%" wrap="wrap">
             <Text
               fontSize={{
@@ -302,7 +282,7 @@ const UserPage = () => {
               </GridItem>
             </Grid>
           </Box>
-        </Box>
+        </>
       )}
     </>
   );
