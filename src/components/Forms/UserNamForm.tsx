@@ -10,7 +10,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
-import { showToastMessage } from '../../utils/toastUtils';
+import { showToastMessage } from 'utils/toastUtils';
 
 const UserNameForm = () => {
   const navigate = useNavigate();

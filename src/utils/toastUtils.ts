@@ -1,5 +1,5 @@
+import { TOAST_MESSAGE_STYLE } from 'constants/toastStyleConstant';
 import { toast, TypeOptions } from 'react-toastify';
-import { TOAST_MESSAGE_STYLE } from '../constants/toastStyleConstant';
 
 export const showToastMessage = (type: TypeOptions, message: string) => {
   switch (type) {

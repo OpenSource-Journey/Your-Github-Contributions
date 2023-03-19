@@ -1,12 +1,12 @@
 import { Box, ChakraProvider, theme } from '@chakra-ui/react';
+import 'App.css';
+import AppRoutes from 'AppRoutes';
+import ErrorFallback from 'components/ErrorFallback/ErrorFallback';
+import Footer from 'components/Layout/Footer';
+import Header from 'components/Layout/Header';
+import ToastMessage from 'components/ToastMessage/ToastMessage';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import './App.css';
-import AppRoutes from './AppRoutes';
-import ErrorFallback from './components/ErrorFallback/ErrorFallback';
-import Footer from './components/Layout/Footer';
-import Header from './components/Layout/Header';
-import ToastMessage from './components/ToastMessage/ToastMessage';
 
 export const App = () => {
   return (
