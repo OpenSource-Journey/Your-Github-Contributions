@@ -9,6 +9,11 @@ import {
   Tooltip,
   useClipboard,
 } from '@chakra-ui/react';
+import ContributionCalendar from 'components/ContributionCalendar/ContributionCalendar';
+import GithubOrgs from 'components/GithubOrgs';
+import GithubPopularRepositories from 'components/GithubPopularRepositories';
+import ResourceDistribution from 'components/ResourceDistribution/ResourceDistribution';
+import Summary from 'components/Summary/Summary';
 import {
   ContributionSummary,
   getContributionSummary,
@@ -23,12 +28,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { useParams } from 'react-router-dom';
-import ContributionCalendar from '../../components/ContributionCalendar/ContributionCalendar';
-import GithubOrgs from '../../components/GithubOrgs';
-import GithubPopularRepositories from '../../components/GithubPopularRepositories';
-import ResourceDistribution from '../../components/ResourceDistribution/ResourceDistribution';
-import Summary from '../../components/Summary/Summary';
-import { showToastMessage } from '../../utils/toastUtils';
+import { showToastMessage } from 'utils/toastUtils';
 import UserPageSkeleton from './UserPageSkeleton';
 
 const UserPage = () => {

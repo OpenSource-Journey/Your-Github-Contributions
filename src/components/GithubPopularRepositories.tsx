@@ -2,7 +2,7 @@ import { Flex, Grid, Icon, Link, Text, useColorMode } from '@chakra-ui/react';
 import { PinnedItemNode } from 'github-user-contribution-summary';
 import { FC } from 'react';
 import { GoRepo } from 'react-icons/go';
-import { getIconByLanguage } from '../utils/iconUtils';
+import { getIconByLanguage } from 'utils/iconUtils';
 
 interface Props {
   repositories: PinnedItemNode[];

@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
-import BrandImage from '../../assets/images/octocat.png';
-import { ColorModeSwitcher } from '../ColorModeSwitcher/ColorModeSwitcher';
+import BrandImage from 'assets/images/octocat.png';
+import { ColorModeSwitcher } from 'components/ColorModeSwitcher/ColorModeSwitcher';
 
 const Header = () => {
   return (

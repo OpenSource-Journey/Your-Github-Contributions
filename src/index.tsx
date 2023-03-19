@@ -1,9 +1,9 @@
 import { ColorModeScript } from '@chakra-ui/react';
+import { App } from 'App';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { App } from './App';
-import reportWebVitals from './reportWebVitals';
-import * as serviceWorker from './serviceWorker';
+import reportWebVitals from 'reportWebVitals';
+import * as serviceWorker from 'serviceWorker';
 
 const container = document.getElementById('root');
 if (!container) {
