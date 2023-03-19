@@ -12,6 +12,7 @@ import {
 import ContributionCalendar from 'components/ContributionCalendar/ContributionCalendar';
 import GithubOrgs from 'components/GithubOrgs';
 import GithubPopularRepositories from 'components/GithubPopularRepositories';
+import PageHead from 'components/PageHead';
 import ResourceDistribution from 'components/ResourceDistribution/ResourceDistribution';
 import Summary from 'components/Summary/Summary';
 import {
@@ -181,6 +182,10 @@ const UserPage = () => {
 
   return (
     <>
+      <PageHead
+        description={`Checkout ${userName} contributions summary`}
+        title={`${userName} contribution summary`}
+      />
       {isLoading ? (
         <UserPageSkeleton />
       ) : (
