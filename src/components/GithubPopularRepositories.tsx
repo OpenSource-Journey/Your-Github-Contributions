@@ -1,6 +1,7 @@
 import { Flex, Grid, Icon, Link, Text, useColorMode } from '@chakra-ui/react';
 import { PinnedItemNode } from 'github-user-contribution-summary';
 import { FC } from 'react';
+import { AiOutlineStar, BiGitRepoForked } from 'react-icons/all';
 import { GoRepo } from 'react-icons/go';
 import { getIconByLanguage } from 'utils/iconUtils';
 
@@ -54,6 +55,20 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
                   color={repository.primaryLanguage.color}
                   marginLeft="auto"
                 />
+              </Flex>
+              <Flex marginTop={1}>
+                <Flex alignItems="center">
+                  <AiOutlineStar />
+                  <Text color="GrayText" paddingLeft={1} paddingRight={5}>
+                    {repository.stargazerCount}
+                  </Text>
+                </Flex>
+                <Flex alignItems="center">
+                  <BiGitRepoForked />
+                  <Text color="GrayText" paddingLeft={1}>
+                    {repository.forkCount}
+                  </Text>
+                </Flex>
               </Flex>
 
               <Text color="gray.500" mt={1}>
