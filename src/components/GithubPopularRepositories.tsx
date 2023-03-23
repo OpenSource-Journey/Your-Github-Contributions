@@ -56,6 +56,11 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
                   marginLeft="auto"
                 />
               </Flex>
+
+              <Text color="gray.500" mt={1}>
+                {repository.description}
+              </Text>
+
               <Flex marginTop={1}>
                 <Flex alignItems="center">
                   <AiOutlineStar />
@@ -70,10 +75,6 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
                   </Text>
                 </Flex>
               </Flex>
-
-              <Text color="gray.500" mt={1}>
-                {repository.description}
-              </Text>
             </Link>
           );
         })}
