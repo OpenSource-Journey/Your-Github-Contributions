@@ -1,14 +1,6 @@
-import {
-  Button,
-  Flex,
-  IconButton,
-  Input,
-  Tooltip,
-  useClipboard,
-} from '@chakra-ui/react';
+import { Button, Flex, Input, Tooltip, useClipboard } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import { showToastMessage } from 'utils/toastUtils';
 
@@ -62,13 +54,6 @@ const UserNameForm = () => {
           >
             Generate
           </Button>
-        </Tooltip>
-        <Tooltip label="Copy Contributions Page URL">
-          <IconButton
-            aria-label="contributions-page-link"
-            icon={<HiOutlineClipboardCopy />}
-            onClick={() => userName && onCopy()}
-          />
         </Tooltip>
       </Flex>
     </form>
