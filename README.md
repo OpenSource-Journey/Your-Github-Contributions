@@ -152,6 +152,8 @@ We value all contributions, no matter their size! To get started, please refer t
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jayakumar03"><img src="https://avatars.githubusercontent.com/u/86454250?v=4?s=100" width="100px;" alt="Jaya Kumar"/><br /><sub><b>Jaya Kumar</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=Jayakumar03" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mayukh551"><img src="https://avatars.githubusercontent.com/u/82811112?v=4?s=100" width="100px;" alt="Mayukh Bhowmick"/><br /><sub><b>Mayukh Bhowmick</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=mayukh551" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ArshM17"><img src="https://avatars.githubusercontent.com/u/107296445?v=4?s=100" width="100px;" alt="ArshM17"/><br /><sub><b>ArshM17</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=ArshM17" title="Code">💻</a></td>
+	<td align="center" valign="top" width="14.28%"><a href="https://github.com/bhushansshah"><img src="https://avatars.githubusercontent.com/u/102481683?v=4" width="100px;" alt="bhushansshah"/><br /><sub><b>bhushansshah</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=bhushansshah" title="Code">💻</a></td>
+
     </tr>
   </tbody>
 </table>

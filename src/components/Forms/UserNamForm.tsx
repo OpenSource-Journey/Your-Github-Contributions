@@ -67,6 +67,7 @@ const UserNameForm = () => {
           <IconButton
             aria-label="contributions-page-link"
             icon={<HiOutlineClipboardCopy />}
+            isDisabled={!userName}
             onClick={() => userName && onCopy()}
           />
         </Tooltip>
