@@ -35,6 +35,8 @@ const UserNameForm = () => {
     userName && navigate(`/${userName}`);
   };
 
+  const isUserNameEmpty = userName.trim().length === 0;
+
   return (
     <form onSubmit={handleSubmit}>
       <Flex alignItems="center" gap={4} justifyContent="center" wrap="wrap">
@@ -51,19 +53,20 @@ const UserNameForm = () => {
             setUserName(value);
           }}
         />
-        <Tooltip label="Generate">
+        <Tooltip isDisabled={isUserNameEmpty} label="Generate">
           <Button
             bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
             colorScheme="teal"
             isDisabled={!userName}
             px={4}
             type="submit"
-            variant="solid"
-          >
+            variant="solid">
             Generate
           </Button>
         </Tooltip>
-        <Tooltip label="Copy Contributions Page URL">
+        <Tooltip
+          isDisabled={isUserNameEmpty}
+          label="Copy Contributions Page URL">
           <IconButton
             aria-label="contributions-page-link"
             icon={<HiOutlineClipboardCopy />}
