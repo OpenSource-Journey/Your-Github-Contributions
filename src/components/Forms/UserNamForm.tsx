@@ -62,9 +62,7 @@ const UserNameForm = () => {
             Generate
           </Button>
         </Tooltip>
-        <Tooltip
-          isDisabled={!userName}
-          label="Copy Contributions Page URL">
+        <Tooltip isDisabled={!userName} label="Copy Contributions Page URL">
           <IconButton
             aria-label="contributions-page-link"
             icon={<HiOutlineClipboardCopy />}
