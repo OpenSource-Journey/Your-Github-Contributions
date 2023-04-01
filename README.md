@@ -1,7 +1,7 @@
 # Your Github Contributions
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <div align="center">
@@ -155,6 +155,7 @@ We value all contributions, no matter their size! To get started, please refer t
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/bhushansshah"><img src="https://avatars.githubusercontent.com/u/102481683?v=4?s=100" width="100px;" alt="bhushansshah"/><br /><sub><b>bhushansshah</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=bhushansshah" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JatinSingh08"><img src="https://avatars.githubusercontent.com/u/97881261?v=4?s=100" width="100px;" alt="Jatin Singh"/><br /><sub><b>Jatin Singh</b></sub></a><br /><a href="https://github.com/OpenSource-Journey/Your-Github-Contributions/commits?author=JatinSingh08" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
