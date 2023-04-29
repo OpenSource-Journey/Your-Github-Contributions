@@ -162,12 +162,9 @@ const UserPage = () => {
     };
   }, [contributionData]);
 
-  useMemo(() => {
+  useEffect(() => {
     const url = `${window.location.protocol}//${window.location.host}/${userName}`;
-
     setValue(url);
-
-    return url;
   }, [userName, setValue]);
 
   useEffect(() => {
