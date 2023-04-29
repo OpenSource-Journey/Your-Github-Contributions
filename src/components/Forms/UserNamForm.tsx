@@ -40,6 +40,7 @@ const UserNameForm = () => {
       <Flex alignItems="center" gap={4} justifyContent="center" wrap="wrap">
         <Input
           autoFocus
+          isRequired
           placeholder="Enter Your GitHub Username..."
           spellCheck={false}
           type="search"
@@ -50,21 +51,22 @@ const UserNameForm = () => {
             setUserName(value);
           }}
         />
-        <Tooltip label="Generate">
+        <Tooltip isDisabled={!userName} label="Generate">
           <Button
             bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
             colorScheme="teal"
+            isDisabled={!userName}
             px={4}
             type="submit"
-            variant="solid"
-          >
+            variant="solid">
             Generate
           </Button>
         </Tooltip>
-        <Tooltip label="Copy Contributions Page URL">
+        <Tooltip isDisabled={!userName} label="Copy Contributions Page URL">
           <IconButton
             aria-label="contributions-page-link"
             icon={<HiOutlineClipboardCopy />}
+            isDisabled={!userName}
             onClick={() => userName && onCopy()}
           />
         </Tooltip>
