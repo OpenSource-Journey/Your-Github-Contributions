@@ -258,30 +258,34 @@ const UserPage = () => {
           />
           <Box id="Contributed-Organizations" my={8}>
             <Grid gap={8}>
-              <GridItem
-                border="1px"
-                borderColor="gray.200"
-                borderRadius="4px"
-                p={4}
-                shadow="md"
-              >
-                <GithubOrgs
-                  organizations={
-                    contributionData?.contributedOrganizations ?? []
-                  }
-                />
-              </GridItem>
-              <GridItem
-                border="1px"
-                borderColor="gray.200"
-                borderRadius="4px"
-                p={4}
-                shadow="md"
-              >
-                <GithubPopularRepositories
-                  repositories={contributionData?.popularRepositories ?? []}
-                />
-              </GridItem>
+              {contributionData?.contributedOrganizations &&
+                contributionData?.contributedOrganizations.length > 0 && (
+                  <GridItem
+                    border="1px"
+                    borderColor="gray.200"
+                    borderRadius="4px"
+                    p={4}
+                    shadow="md"
+                  >
+                    <GithubOrgs
+                      organizations={contributionData?.contributedOrganizations}
+                    />
+                  </GridItem>
+                )}
+              {contributionData?.popularRepositories &&
+                contributionData?.popularRepositories.length > 0 && (
+                  <GridItem
+                    border="1px"
+                    borderColor="gray.200"
+                    borderRadius="4px"
+                    p={4}
+                    shadow="md"
+                  >
+                    <GithubPopularRepositories
+                      repositories={contributionData?.popularRepositories}
+                    />
+                  </GridItem>
+                )}
             </Grid>
           </Box>
         </>
