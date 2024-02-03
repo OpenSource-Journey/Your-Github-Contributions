@@ -6129,10 +6129,10 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
-github-user-contribution-summary@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/github-user-contribution-summary/-/github-user-contribution-summary-0.0.8.tgz#fced60361b06c931b13ce013824f1427bfa0b3a7"
-  integrity sha512-f5FPwoCrHAisBskuxjASN74eMvDfYeW+p3qAMhtiIGubYRMBSWcVSxk1kCz1NX93hXU2nH/vJF3WWDvPHcuzJg==
+github-user-contribution-summary@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/github-user-contribution-summary/-/github-user-contribution-summary-0.0.10.tgz#851c53e9b808fc410591c492974b5b2cd9037bf5"
+  integrity sha512-o1iB6veoykMrTheb87Z6bXjnoFxbA11o7LrwyKsRuXTC0nJ0XOaQ81PyBjWDqDuHk0v846+GvSLUfB33KBXNcQ==
   dependencies:
     axios "1.1.1"
 
