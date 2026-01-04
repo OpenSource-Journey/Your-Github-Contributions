@@ -6,13 +6,15 @@ import { GoRepo } from 'react-icons/go';
 import { getIconByLanguage } from 'utils/iconUtils';
 
 interface Props {
-  repositories?: PinnedItemNode[];
+  repositories: PinnedItemNode[];
 }
 
-const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
+const GithubPopularRepositories: FC<Props> = ({ repositories = [] }) => {
   const { colorMode } = useColorMode();
 
-  if (!repositories || repositories.length === 0) {
+  const validRepositories = repositories.filter((repo) => repo && repo.url);
+
+  if (validRepositories.length === 0) {
     return null;
   }
 
@@ -28,11 +30,7 @@ const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
           base: 'repeat(1, 1fr)',
           md: 'repeat(2, 1fr)',
         }}>
-        {repositories.map((repository) => {
-          if (!repository || !repository.url) {
-            return null;
-          }
-
+        {validRepositories.map((repository) => {
           const primaryLanguage = repository.primaryLanguage;
 
           return (
