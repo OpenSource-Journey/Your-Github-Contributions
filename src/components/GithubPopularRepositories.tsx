@@ -6,68 +6,77 @@ import { GoRepo } from 'react-icons/go';
 import { getIconByLanguage } from 'utils/iconUtils';
 
 interface Props {
-  repositories: PinnedItemNode[];
+  repositories?: PinnedItemNode[];
 }
 
 const GithubPopularRepositories: FC<Props> = ({ repositories }) => {
-  const colorMode = useColorMode();
+  const { colorMode } = useColorMode();
+
+  if (!repositories || repositories.length === 0) {
+    return null;
+  }
 
   return (
     <>
       <Text fontWeight="medium" mb={4}>
         Popular Repositories
       </Text>
+
       <Grid
         gap={4}
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(2, 1fr)',
-        }}
-      >
+        }}>
         {repositories.map((repository) => {
-          if (Object.entries(repository).length === 0) {
-            return <></>;
+          if (!repository || !repository.url) {
+            return null;
           }
+
+          const primaryLanguage = repository.primaryLanguage;
 
           return (
             <Link
               _hover={{
-                textDecoration: 'none',
                 background:
-                  colorMode.colorMode === 'dark'
-                    ? 'whiteAlpha.200'
-                    : 'gray.100',
+                  colorMode === 'dark' ? 'whiteAlpha.200' : 'gray.100',
+                textDecoration: 'none',
               }}
               border="1px"
               borderColor="gray.200"
               borderRadius="4px"
               href={repository.url}
-              key={repository.name}
+              key={repository.nameWithOwner}
               p={2}
-              target="_blank"
-            >
-              <Flex gap={2}>
-                <GoRepo style={{ alignSelf: 'center' }} />
+              target="_blank">
+              <Flex alignItems="center" gap={2}>
+                <GoRepo />
+
                 <Text>{repository.nameWithOwner}</Text>
-                <Icon
-                  alignSelf="center"
-                  as={getIconByLanguage(repository.primaryLanguage.name)}
-                  color={repository.primaryLanguage.color}
-                  marginLeft="auto"
-                />
+
+                {primaryLanguage && (
+                  <Icon
+                    as={getIconByLanguage(primaryLanguage.name)}
+                    color={primaryLanguage.color}
+                    marginLeft="auto"
+                  />
+                )}
               </Flex>
 
-              <Text color="gray.500" mt={1}>
-                {repository.description}
-              </Text>
+              {repository.description && (
+                <Text color="gray.500" mt={1}>
+                  {repository.description}
+                </Text>
+              )}
 
               <Flex marginTop={1}>
-                <Flex alignItems="center">
+                <Flex alignItems="center" mr={5}>
                   <AiOutlineStar />
-                  <Text color="GrayText" paddingLeft={1} paddingRight={5}>
+                  <Text color="GrayText" paddingLeft={1}>
                     {repository.stargazerCount}
                   </Text>
                 </Flex>
+
                 <Flex alignItems="center">
                   <BiGitRepoForked />
                   <Text color="GrayText" paddingLeft={1}>
