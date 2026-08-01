@@ -196,7 +196,7 @@ const UserPage = () => {
               fontWeight="semibold"
               mb={7}
               textAlign="center"
-            >{`${userName} contributions ✨`}</Text>
+            >{`${userName}${userName.endsWith('s') ? "'" : "'s"} contributions ✨`}</Text>
             <Flex
               gap={2}
               justifyContent="center"
